@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b06299c7a38cb42a4a90e439f4a597, type: 3}
   m_Name: Test01SO
   m_EditorClassIdentifier: 
-  btn: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
+  btn0: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
+  btn1: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
+  btn2: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
