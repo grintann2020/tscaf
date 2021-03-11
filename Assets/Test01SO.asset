@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Test01SO
   m_EditorClassIdentifier: 
   btn0: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
-  btn1: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
-  btn2: {fileID: 24679468009397820, guid: e50aed65b3a8f9c48aeea7896e5c71e4, type: 3}
+  btn1: {fileID: 24679468009397820, guid: 93ce60d3e6be4c947b28a4bd63dfdc13, type: 3}
+  btn2: {fileID: 24679468009397820, guid: 28517be8056ad5842b8168a27610325b, type: 3}
