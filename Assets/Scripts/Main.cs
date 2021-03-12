@@ -4,17 +4,19 @@ namespace T {
 
     public class Main : MonoBehaviour {
 
+        [SerializeField] private SettingsSO _settings;
+
         void Awake() {
-            Debug.Log(PgmMgr.Ins);
+            Debug.Log(GameMgr.Ins);
+            GameMgr.Ins.Bind(_settings);
         }
 
         void Start() {
-            PgmMgr.Ins.Init();
-            PgmMgr.Ins.ExePgm(EPgm.Init);
+            GameMgr.Ins.Init();
         }
 
         void Update() {
-            PgmMgr.Ins.InvokeUpd();
+            GameMgr.Ins.InvokeUpd();
         }
     }
 }

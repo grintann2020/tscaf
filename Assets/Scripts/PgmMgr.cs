@@ -13,8 +13,8 @@ namespace T {
         private Dictionary<EPgm, IPgm> _pgmDic = new Dictionary<EPgm, IPgm>();
         private IPgm _currPgm = null;
 
-        private InitPgm _initPgm = new InitPgm(); // 初始化程序
-        private MenuPgm _menuPgm = new MenuPgm(); // 啟動程序
+        private InitPgm _initPgm = new InitPgm(); // Initialize Program
+        private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
 
         public void Init() {
             Reg(EPgm.Init, _initPgm);
