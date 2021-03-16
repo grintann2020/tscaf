@@ -1,32 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace T {
 
     public enum EPgm {
-        Init, Menu, Launch, Act
+        Init, Launch, Menu, Stg
     }
 
     public class PgmMgr : Singleton<PgmMgr> {
-
+        
         private Dictionary<EPgm, IPgm> _pgmDic = new Dictionary<EPgm, IPgm>();
         private IPgm _currPgm = null;
-
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
         private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
         private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
-        private ActPgm _actPgm = new ActPgm(); // Action Program
+        private StgPgm _stgPgm = new StgPgm(); // Action Program
 
         public void Init() {
             Reg(EPgm.Init, _initPgm);
             Reg(EPgm.Launch, _launchPgm);
             Reg(EPgm.Menu, _menuPgm);
-            Reg(EPgm.Act, _actPgm);
+            Reg(EPgm.Stg, _stgPgm);
             Link(_initPgm, _launchPgm);
             Link(_launchPgm, _menuPgm);
             Link(_menuPgm, null);
-            Link(_actPgm, _menuPgm);
+            Link(_stgPgm, _menuPgm);
         }
 
         public void InvokeUpd() {
@@ -37,7 +34,7 @@ namespace T {
 
         public void Reg(EPgm ePgm, IPgm iPgm) {
             _pgmDic.Add(ePgm, iPgm);
-            iPgm.Bind(this);
+            // iPgm.Bind(this);
         }
 
         public void Link(IPgm thisPgm, IPgm nextPgm) {

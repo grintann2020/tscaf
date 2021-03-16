@@ -3,11 +3,6 @@ namespace T {
     public class MenuPgm : IPgm {
 
         public IPgm Next { get; set; }
-        private PgmMgr _mgr;
-
-        public void Bind(PgmMgr mgr) {
-            _mgr = mgr;
-        }
 
         public void InvokeUpd() {
 

@@ -9,5 +9,9 @@ namespace T {
     public class UIMgr : Singleton<UIMgr> {
 
         private Dictionary<EUI, IUI> _uiDic = new Dictionary<EUI, IUI>();
+
+        public void Init() {
+            
+        }
     }
 }

@@ -9,12 +9,16 @@ namespace T {
 
         public void Bind(Settings settings) {
             _settings = settings;
+            _scrRez = settings.ScrRez;
+        }
+
+        public void Start() {
+            PgmMgr.Ins.Init();
+            PgmMgr.Ins.Exe(EPgm.Init);
         }
 
         public void Init() {
             SetRez(2);
-            PgmMgr.Ins.Init();
-            PgmMgr.Ins.Exe(EPgm.Init);
         }
 
         public void InvokeUpd() {

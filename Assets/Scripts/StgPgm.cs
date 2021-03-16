@@ -1,13 +1,8 @@
 namespace T {
 
-    public class ActPgm : IPgm {
+    public class StgPgm : IPgm {
 
         public IPgm Next { get; set; }
-        private PgmMgr _mgr;
-
-        public void Bind(PgmMgr mgr) {
-            _mgr = mgr;
-        }
 
         public void InvokeUpd() {
 

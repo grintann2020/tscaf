@@ -3,18 +3,16 @@ namespace T {
     public class InitPgm : IPgm {
 
         public IPgm Next { get; set; }
-        private PgmMgr _mgr;
-
-        public void Bind(PgmMgr mgr) {
-            _mgr = mgr;
-        }
 
         public void InvokeUpd() {
 
         }
 
         public void Exe() {
-
+            GameMgr.Ins.Init();
+            UIMgr.Ins.Init();
+            InteractMgr.Ins.Init();
+            PgmMgr.Ins.Next();
         }
 
         public void End() {

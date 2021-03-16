@@ -2,7 +2,7 @@
 
 namespace T {
 
-    public class Main : MonoBehaviour {
+    public class Main : SingletonMB<Main> {
 
         [SerializeField] private Settings _settings;
 
@@ -12,7 +12,7 @@ namespace T {
         }
 
         void Start() {
-            GameMgr.Ins.Init();
+            GameMgr.Ins.Start();
         }
 
         void Update() {
