@@ -12,7 +12,7 @@ namespace T {
         }
 
         void Start() {
-            GameMgr.Ins.Start();
+            GameMgr.Ins.Begin();
         }
 
         void Update() {

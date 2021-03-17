@@ -12,7 +12,7 @@ namespace T {
             _scrRez = settings.ScrRez;
         }
 
-        public void Start() {
+        public void Begin() {
             PgmMgr.Ins.Init();
             PgmMgr.Ins.Exe(EPgm.Init);
         }

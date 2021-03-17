@@ -2,10 +2,6 @@
 
 namespace T {
 
-    public enum EPgm {
-        Init, Launch, Menu, Stg
-    }
-
     public class PgmMgr : Singleton<PgmMgr> {
         
         private Dictionary<EPgm, IPgm> _pgmDic = new Dictionary<EPgm, IPgm>();
@@ -13,7 +9,8 @@ namespace T {
         private InitPgm _initPgm = new InitPgm(); // Initialize Program
         private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
         private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
-        private StgPgm _stgPgm = new StgPgm(); // Action Program
+        private StgPgm _stgPgm = new StgPgm(); // Stage Program
+        private MapPgm _mapPgm = new MapPgm(); // Map Program
 
         public void Init() {
             Reg(EPgm.Init, _initPgm);
@@ -34,7 +31,6 @@ namespace T {
 
         public void Reg(EPgm ePgm, IPgm iPgm) {
             _pgmDic.Add(ePgm, iPgm);
-            // iPgm.Bind(this);
         }
 
         public void Link(IPgm thisPgm, IPgm nextPgm) {
