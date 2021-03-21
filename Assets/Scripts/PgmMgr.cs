@@ -4,23 +4,19 @@ namespace T {
 
     public class PgmMgr : Singleton<PgmMgr> {
         
-        private Dictionary<EPgm, IPgm> _pgmDic = new Dictionary<EPgm, IPgm>();
-        private IPgm _currPgm = null;
-        private InitPgm _initPgm = new InitPgm(); // Initialize Program
-        private LaunchPgm _launchPgm = new LaunchPgm(); // Launch Program
-        private MenuPgm _menuPgm = new MenuPgm(); // Menu Program
-        private StgPgm _stgPgm = new StgPgm(); // Stage Program
-        private MapPgm _mapPgm = new MapPgm(); // Map Program
+        private Dictionary<EPgm, IPgm> _pgmDic;
+        private IPgm _currPgm;
+        private IPgmGrp _iPgmGrp;
+
+        public void Bind(IPgmGrp iPgmGrp) {
+            _iPgmGrp = iPgmGrp;
+            _iPgmGrp.Mgr = this;
+        }
 
         public void Init() {
-            Reg(EPgm.Init, _initPgm);
-            Reg(EPgm.Launch, _launchPgm);
-            Reg(EPgm.Menu, _menuPgm);
-            Reg(EPgm.Stg, _stgPgm);
-            Link(_initPgm, _launchPgm);
-            Link(_launchPgm, _menuPgm);
-            Link(_menuPgm, null);
-            Link(_stgPgm, _menuPgm);
+            _pgmDic = new Dictionary<EPgm, IPgm>();
+            _currPgm = null;
+            _iPgmGrp.Init();
         }
 
         public void InvokeUpd() {
@@ -33,8 +29,8 @@ namespace T {
             _pgmDic.Add(ePgm, iPgm);
         }
 
-        public void Link(IPgm thisPgm, IPgm nextPgm) {
-            thisPgm.Next = nextPgm;
+        public void Link(IPgm iThis, IPgm iNext) {
+            iThis.Next = iNext;
         }
 
         public void Exe(EPgm ePgm) { // excute specific program by Enum 
@@ -60,23 +56,5 @@ namespace T {
                 _currPgm.Exe();
             }
         }
-
-        // public void Exe(IPgm iPgm) {
-        //     iPgm.Exe();
-        // }
-
-        // public void EndPgm(EPgm ePgm) { // End Specific Pgm By Enum
-        //     _currPgm = null;
-        //     End(_pgmDic[ePgm]);
-        // }
-
-        // public void EndPgm(IPgm iPgm) { // End Specific Pgm
-        //     _currPgm = null;
-        //     End(iPgm);
-        // }
-
-        // public void End(IPgm iPgm) {
-        //     iPgm.End();
-        // }
     }
 }

@@ -1,4 +1,6 @@
-namespace T {
+using T;
+
+namespace DT {
 
     public class StgPgm : IPgm {
 

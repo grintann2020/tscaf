@@ -1,6 +1,8 @@
-namespace T {
+using T;
 
-    public class MapPgm : IPgm {
+namespace DT {
+
+    public class MenuPgm : IPgm {
 
         public IPgm Next { get; set; }
 

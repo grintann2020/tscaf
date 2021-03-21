@@ -1,6 +1,7 @@
 using UnityEngine;
+using T;
 
-namespace T {
+namespace Robot {
 
     public class InitPgm : IPgm {
 
@@ -11,15 +12,17 @@ namespace T {
         }
 
         public void Exe() {
-            GameMgr.Ins.Init();
             UIMgr.Ins.Init();
             InteractMgr.Ins.Init();
             StgMgr.Ins.Init();
+            
+            Debug.Log("init program --> executed");
+
             PgmMgr.Ins.Next();
         }
 
         public void End() {
-            Debug.Log("init program is end");
+            Debug.Log("init program --> end");
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using T;
 
 namespace T {
 
@@ -10,14 +11,15 @@ namespace T {
         public void Bind(Settings settings) {
             _settings = settings;
             _scrRez = settings.ScrRez;
+            PgmMgr.Ins.Bind(_settings.IPgmGrp);
         }
 
         public void Begin() {
+            Setting();
             PgmMgr.Ins.Init();
-            PgmMgr.Ins.Exe(EPgm.Init);
         }
 
-        public void Init() {
+        public void Setting() {
             SetRez(2);
         }
 

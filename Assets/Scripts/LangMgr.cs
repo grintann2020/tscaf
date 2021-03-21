@@ -15,5 +15,10 @@ namespace T {
 
         }
 
+        public static string[,] TermArr = new string[,] {
+            {"Grin Bit", "Grin Bit"},
+            {"Double Trap", "雙重陷阱"},
+            {"Test", "測試"}
+        };
     }
 }

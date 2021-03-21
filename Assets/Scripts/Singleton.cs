@@ -10,6 +10,9 @@
                 }
                 return _ins; // Returns the instance of this singleton.
             }
+            set {
+                _ins = value;
+            }
         }
     }
 }

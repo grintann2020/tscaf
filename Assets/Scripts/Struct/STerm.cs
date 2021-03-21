@@ -3,13 +3,15 @@ using UnityEngine;
 namespace T {
 
     public struct STerm {
-        // public SystemLanguage Num;
-        public ETerm Num;
-        public string Txt;
+        
+        private ETerm _eTerm;
+        private SystemLanguage _eLang;
+        private string _txt;
 
-        public STerm(ETerm num, string txt) {
-            Num = num;
-            Txt = txt;
+        public STerm(ETerm eTerm, SystemLanguage eLang, string txt) {
+            _eTerm = eTerm;
+            _eLang = eLang;
+            _txt = txt;
         }
     }
 }
