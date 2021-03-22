@@ -14,11 +14,11 @@ namespace T {
             get {
                 switch (EGame) {
                     case EGame.DoubleTrap:
-                        return new PgmGrp_DT();
+                        return new DT.PgmGrp();
                     case EGame.Robot:
-                        return new PgmGrp_Robot();
+                        return new Robot.PgmGrp();
                     default:
-                        return new PgmGrp_DT();
+                        return new DT.PgmGrp();
                 }
             }
         }

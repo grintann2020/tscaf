@@ -1,8 +1,12 @@
-﻿namespace T {
+﻿using System.Collections.Generic;
+
+namespace T {
 
     public interface IPgmGrp {
 
-        PgmMgr Mgr { get; set; }
+        enum EPgm {}
+        PgmMgr Mgr { set; }
+        Dictionary<EPgm, IPgm> PgmDic { get; set; }
         void Init();
     }
 }

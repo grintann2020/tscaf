@@ -29,7 +29,7 @@ namespace T {
 
         public void SetRez() {
             Screen.SetResolution(_scrRez.Wd, _scrRez.Ht, true);
-            // Debug.Log("Screen Resolution --> Width: " + scrRez.Wd + ", Height: " + scrRez.Ht + ", aspect ratio: " + scrRez.AR);
+            Debug.Log("Screen Resolution --> Width: " + _scrRez.Wd + ", Height: " + _scrRez.Ht + ", aspect ratio: " + _scrRez.AR);
         }
 
         public void SetRez(byte lv) {

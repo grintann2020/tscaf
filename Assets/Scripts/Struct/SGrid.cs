@@ -2,10 +2,10 @@ namespace T {
 
     public struct SGrid2 {
 
-        public int Row;
-        public int Col;
+        public ushort Row;
+        public ushort Col;
 
-        public SGrid2(int row, int col) {
+        public SGrid2(ushort row, ushort col) {
             Row = row;
             Col = col;
         }
@@ -13,11 +13,11 @@ namespace T {
 
     public struct SGrid3 {
 
-        public int Row;
-        public int Col;
-        public int Lay;
+        public ushort Row;
+        public ushort Col;
+        public ushort Lay;
 
-        public SGrid3(int row, int col, int lay) {
+        public SGrid3(ushort row, ushort col, ushort lay) {
             Row = row;
             Col = col;
             Lay = lay;

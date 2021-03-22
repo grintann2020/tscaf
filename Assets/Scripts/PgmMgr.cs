@@ -4,7 +4,7 @@ namespace T {
 
     public class PgmMgr : Singleton<PgmMgr> {
         
-        private Dictionary<EPgm, IPgm> _pgmDic;
+        // private Dictionary<IPgmGrp.EPgm, IPgm> _pgmDic;
         private IPgm _currPgm;
         private IPgmGrp _iPgmGrp;
 
@@ -14,7 +14,7 @@ namespace T {
         }
 
         public void Init() {
-            _pgmDic = new Dictionary<EPgm, IPgm>();
+            // _pgmDic = new Dictionary<IPgmGrp.EPgm, IPgm>();
             _currPgm = null;
             _iPgmGrp.Init();
         }
@@ -25,19 +25,19 @@ namespace T {
             }
         }
 
-        public void Reg(EPgm ePgm, IPgm iPgm) {
-            _pgmDic.Add(ePgm, iPgm);
-        }
+        // public void Reg(IPgmGrp<_iPgmGrp.GetType()> ePgm, IPgm iPgm) {
+        //     _pgmDic.Add(ePgm, iPgm);
+        // }
 
         public void Link(IPgm iThis, IPgm iNext) {
             iThis.Next = iNext;
         }
 
-        public void Exe(EPgm ePgm) { // excute specific program by Enum 
+        public void Exe(IPgmGrp.EPgm ePgm) { // excute specific program by Enum 
             if (_currPgm != null) {
                 _currPgm.End();
             }
-            _currPgm = _pgmDic[ePgm];
+            _currPgm = _iPgmGrp.PgmDic[ePgm];
             _currPgm.Exe();
         }
 
