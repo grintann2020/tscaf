@@ -2,51 +2,45 @@
 
     public class PgmMgr : Singleton<PgmMgr> {
         
-        private IPgmPrime _iPgmPrime;
         private IPgm[] _iPgmArr;
-        private IPgm _iCurr;
+        private IPgm _iCurrPgm;
         
         public void Bind(IPgmPrime iPgmPrime) {
-            _iPgmPrime = iPgmPrime;
+            _iPgmArr = iPgmPrime.IPgmArr;
         }
 
         public void Init() {
-            _iCurr = null;
-            Reg(_iPgmPrime.IPgmArr);
+            _iCurrPgm = null;
             Exe(_iPgmArr[0]);
         }
 
         public void InvokeUpd() {
-            if (_iCurr != null) {
-                _iCurr.InvokeUpd();
+            if (_iCurrPgm != null) {
+                _iCurrPgm.InvokeUpd();
             }
-        }
-
-        public void Reg(IPgm[] iPgmArr) {
-            _iPgmArr = iPgmArr;
         }
 
         public void Exe(byte ePgm) { // excute specific program by Enum 
-            if (_iCurr != null) {
-                _iCurr.End();
+            if (_iCurrPgm != null) {
+                _iCurrPgm.End();
             }
-            _iCurr = _iPgmArr[ePgm];
-            _iCurr.Exe();
+            _iCurrPgm = _iPgmArr[ePgm];
+            _iCurrPgm.Exe();
         }
 
         public void Exe(IPgm iPgm) { // excute specific program by interface
-            if (_iCurr != null) {
-                _iCurr.End();
+            if (_iCurrPgm != null) {
+                _iCurrPgm.End();
             }
-            _iCurr = iPgm;
-            _iCurr.Exe();
+            _iCurrPgm = iPgm;
+            _iCurrPgm.Exe();
         }
 
         public void Next() { // end current program and excute next program
-            if (_iCurr != null && _iCurr.Next != null) {
-                _iCurr.End();
-                _iCurr = _iCurr.Next;
-                _iCurr.Exe();
+            if (_iCurrPgm != null && _iCurrPgm.Next != null) {
+                _iCurrPgm.End();
+                _iCurrPgm = _iCurrPgm.Next;
+                _iCurrPgm.Exe();
             }
         }
     }

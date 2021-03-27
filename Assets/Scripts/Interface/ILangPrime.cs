@@ -2,6 +2,6 @@
 
     public interface ILangPrime {
 
-        string[][] TermArr { get; }
+        string[][] TermsArr { get; }
     }
 }
