@@ -13,6 +13,7 @@ namespace T {
 
         public void Init() {
             _cam = Camera.main;
+            // _iCamArr[(byte)ECam.Stg]
         }
     }
 }
