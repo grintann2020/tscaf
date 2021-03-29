@@ -8,10 +8,5 @@ namespace T {
 
         public EGame EGame;
         public ScrRez ScrRez;
-        // private PrimeMgr _primeMgr = new PrimeMgr();
-
-        // public IPrime IPrime {
-        //     get { return _primeMgr.Fetch(EGame); }
-        // }
     }
 }

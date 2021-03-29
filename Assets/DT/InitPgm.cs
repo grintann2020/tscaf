@@ -17,6 +17,8 @@ namespace DT {
             UIMgr.Ins.Init();
             InteractMgr.Ins.Init();
             StgMgr.Ins.Init();
+
+            CamMgr.Ins.Create();
             
             Debug.Log("DT) init program --> executed");
             Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Four));

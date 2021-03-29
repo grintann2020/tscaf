@@ -2,6 +2,6 @@ namespace T {
 
     public interface ICam {
 
-        SCoord3 Origin { get; }
+        SOrientC3 DefOrient { get; }
     }
 }

@@ -2,9 +2,8 @@ using T;
 
 namespace DT {
 
-    public class MenuCam : ICam {
+    public class MenuCam : Cam, ICam {
 
-        public SCoord3 Origin { get { return _origin; } }
-        public SCoord3 _origin;
+        
     }
 }

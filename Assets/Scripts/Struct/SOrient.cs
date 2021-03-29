@@ -2,7 +2,7 @@ using System;
 
 namespace T {
 
-    public struct SOrient2 {
+    public struct SOrientC2 {
 
         public SCoord2 A;
         public SCoord2 B;
@@ -12,18 +12,13 @@ namespace T {
             get { return (float)Math.Sqrt(Math.Pow(DistX, 2) + Math.Pow(DistY, 2)); }
         }
 
-        public SOrient2(SCoord2 a, SCoord2 b) {
+        public SOrientC2(SCoord2 a, SCoord2 b) {
             A = a;
             B = b;
         }
-
-        public SOrient2(SGrid2 a, SGrid2 b) {
-            A = new SCoord2(a.Row, a.Col);
-            B = new SCoord2(b.Row, b.Col);
-        }
     }
 
-    public struct SOrient3 {
+    public struct SOrientC3 {
 
         public SCoord3 A;
         public SCoord3 B;
@@ -34,14 +29,42 @@ namespace T {
             get { return (float)Math.Sqrt(Math.Pow(DistX, 2) + Math.Pow(DistY, 2) + Math.Pow(DistZ, 2)); }
         }
 
-        public SOrient3(SCoord3 a, SCoord3 b) {
+        public SOrientC3(SCoord3 a, SCoord3 b) {
             A = a;
             B = b;
         }
+    }
 
-        public SOrient3(SGrid3 a, SGrid3 b) {
-            A = new SCoord3(a.Row, a.Col, a.Lay);
-            B = new SCoord3(b.Row, b.Col, b.Lay);
+    public struct SOrientG2 {
+
+        public SGrid2 A;
+        public SGrid2 B;
+        public float DistX { get { return B.Row - A.Row; } }
+        public float DistY { get { return B.Col - A.Col; } }
+        public float Dist {
+            get { return (float)Math.Sqrt(Math.Pow(DistX, 2) + Math.Pow(DistY, 2)); }
+        }
+
+        public SOrientG2(SGrid2 a, SGrid2 b) {
+            A = a;
+            B = b;
+        }
+    }
+
+    public struct SOrientG3 {
+
+        public SGrid3 A;
+        public SGrid3 B;
+        public float DistX { get { return B.Row - A.Row; } }
+        public float DistY { get { return B.Lay - A.Lay; } }
+        public float DistZ { get { return B.Col - A.Col; } }
+        public float Dist {
+            get { return (float)Math.Sqrt(Math.Pow(DistX, 2) + Math.Pow(DistZ, 2) + Math.Pow(DistY, 2)); }
+        }
+
+        public SOrientG3(SGrid3 a, SGrid3 b) {
+            A = a;
+            B = b;
         }
     }
 }

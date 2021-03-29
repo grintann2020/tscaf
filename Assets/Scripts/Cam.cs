@@ -5,24 +5,16 @@ namespace T {
 
     public class Cam {
 
-        public SOrient3 DefSetup {
-            get {
-                if (_setupLis.Count == 0) {
-                    _setupLis.Add(new SOrient3());
-                } 
-                return _setupLis[0]; }
-            protected set {
-                if (_setupLis.Count == 0) {
-                    _setupLis.Add(new SOrient3());
-                } 
-                _setupLis[0] = value; }
+        public SOrientC3 DefOrient {
+            get { return _defOrient; }
+            protected set { _defOrient = value; }
         }
-        private SOrient3 _defSetup;
-        private List<SOrient3> _setupLis;
+        private SOrientC3 _defOrient;
+        // private List<SOrientC3> _orientLis;
 
         public Cam() {
             Debug.Log("Cam Cam Cam");
-            _setupLis = new List<SOrient3>();
+            // _orientLis = new List<SOrientC3>();
         }
     }
 }
