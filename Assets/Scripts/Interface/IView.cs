@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace T {
 
-    public interface ICam {
+    public interface IView {
 
-        void Lens(Camera cam);
+        
     }
 }

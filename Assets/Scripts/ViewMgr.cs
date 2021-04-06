@@ -14,12 +14,11 @@ namespace T {
         }
 
         public void Init() {
-            // _camLis.Clear();
             _camLis = new List<Camera>();
             _camLis.Add(Camera.main);
+            // Camera.main.nearClipPlane
             // _mainCam = Camera.main;
-            
-            // _iCamArr[(byte)ECam.Stg]
+
         }
 
         public void Create() {

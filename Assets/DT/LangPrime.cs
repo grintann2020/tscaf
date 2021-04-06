@@ -18,8 +18,8 @@ namespace DT {
         private string[][] _termsArr = new string[Enum.GetNames(typeof(ETerm)).Length][];
 
         public LangPrime() {
-            float dur = UnityEngine.Time.realtimeSinceStartup;
-            
+            float stampA = UnityEngine.Time.realtimeSinceStartup;
+
             _termsArr[(ushort)ETerm.One] = new string[] { "One", "壹", "一" };
             _termsArr[(ushort)ETerm.Two] = new string[] { "Two", "貳", "二" };
             _termsArr[(ushort)ETerm.Three] = new string[] { "Three", "參", "三" };
@@ -36,64 +36,64 @@ namespace DT {
             // _termsArr[(ushort)ETerm.DoubleTrap] = new string[] { "DoubleTrap", "雙重陷阱", "雙重陷阱" };
             // _termsArr[(ushort)ETerm.Test] = new string[] { "Test", "測試", "測測" };
 
-            // _termsArr[10] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[11] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[12] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[13] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[14] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[15] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[16] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[17] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[18] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[19] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
-            // _termsArr[20] = new string[] { 
-            //     "TenTenTenTenTenTenTenTenTenTenTen",
-            //     "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
-            //     "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
-            // };
+            _termsArr[10] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[11] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[12] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[13] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[14] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[15] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[16] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[17] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[18] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[19] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
+            _termsArr[20] = new string[] { 
+                "TenTenTenTenTenTenTenTenTenTenTen",
+                "拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾拾",
+                "十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十十"
+            };
 
-            // Debug.Log("realtimeSinceStartup --> "+ UnityEngine.Time.realtimeSinceStartup);
-            Debug.Log("dur --> "+ (UnityEngine.Time.realtimeSinceStartup - dur));
+            float stampB = UnityEngine.Time.realtimeSinceStartup;
+            // Debug.Log("time a -- " + stampA + " --> time b -- " + stampB + ", dur -- " + (double)(stampB - stampA));
         }
     }
 }

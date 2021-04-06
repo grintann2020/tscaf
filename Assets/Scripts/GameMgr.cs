@@ -28,7 +28,7 @@ namespace T {
 
         public void SetRez() {
             Screen.SetResolution(_scrRez.Wd, _scrRez.Ht, true);
-            Debug.Log("Screen Resolution --> Width: " + _scrRez.Wd + ", Height: " + _scrRez.Ht + ", aspect ratio: " + _scrRez.AR);
+            // Debug.Log("Screen Resolution --> Width: " + _scrRez.Wd + ", Height: " + _scrRez.Ht + ", aspect ratio: " + _scrRez.AR);
         }
 
         public void SetRez(byte lv) {
@@ -37,7 +37,7 @@ namespace T {
             }
             _scrRez.Lv = lv;
             Screen.SetResolution(_scrRez.Wd, _scrRez.Ht, true);
-            Debug.Log("Screen Resolution --> Width: " + _scrRez.Wd + ", Height: " + _scrRez.Ht + ", aspect ratio: " + _scrRez.AR);
+            // Debug.Log("Screen Resolution --> Width: " + _scrRez.Wd + ", Height: " + _scrRez.Ht + ", aspect ratio: " + _scrRez.AR);
         }
     }
 }
