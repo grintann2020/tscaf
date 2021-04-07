@@ -1,10 +1,10 @@
 ﻿namespace T {
 
     public class PgmMgr : Singleton<PgmMgr> {
-        
+
         private IPgm[] _iPgmArr;
         private IPgm _iCurrPgm;
-        
+
         public void Bind(IPgmPrime iPgmPrime) {
             _iPgmArr = iPgmPrime.IPgmArr;
         }
@@ -20,8 +20,11 @@
             }
         }
 
-        public void Exe(byte ePgm) { // excute specific program by Enum 
+        public void Exe(byte ePgm) { // excute specific program by Enum
             if (_iCurrPgm != null) {
+                if (_iPgmArr[ePgm] == _iCurrPgm) {
+                    return;
+                }
                 _iCurrPgm.End();
             }
             _iCurrPgm = _iPgmArr[ePgm];
@@ -30,6 +33,9 @@
 
         public void Exe(IPgm iPgm) { // excute specific program by interface
             if (_iCurrPgm != null) {
+                if (iPgm == _iCurrPgm) {
+                    return;
+                }
                 _iCurrPgm.End();
             }
             _iCurrPgm = iPgm;

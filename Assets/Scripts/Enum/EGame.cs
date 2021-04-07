@@ -1,6 +1,6 @@
 namespace T {
 
-    public enum EGame {
+    public enum EGame : byte {
         
         DT, Robot, STG
     }

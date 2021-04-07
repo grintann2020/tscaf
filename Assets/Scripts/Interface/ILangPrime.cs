@@ -2,6 +2,7 @@
 
     public interface ILangPrime {
 
-        string[][] TermsArr { get; }
+        ELang[] LangArr { get; }
+        string[][] TermArr { get; }
     }
 }

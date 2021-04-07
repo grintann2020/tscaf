@@ -1,7 +1,8 @@
 namespace T {
 
-    public interface IViewPrime {
+    public interface IVwPrime {
 
+        IVw[] IVwArr { get; }
         SCamProj[] SCamProjArr { get; }
     }
 }
