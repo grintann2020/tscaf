@@ -2,7 +2,7 @@ namespace T {
 
     public enum ELang : byte {
 
-        AF, // Afrikaans
+        AF, // Afrikaanszzz
         AR, // Arabic
         EU, // Basque
         BE, // Belarusian
@@ -11,8 +11,7 @@ namespace T {
         CS, // Czech
         DA, // Danish
         NL, // Dutch
-        EN_US, // US English
-        EN_UK, // UK English
+        EN, // English
         ET, // Estonian
         FO, // Faroese
         FI, // Finnish

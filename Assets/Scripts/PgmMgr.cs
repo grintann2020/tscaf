@@ -1,17 +1,19 @@
-﻿namespace T {
+﻿using System;
+using UnityEngine;
+
+namespace T {
 
     public class PgmMgr : Singleton<PgmMgr> {
 
         private IPgm[] _iPgmArr;
         private IPgm _iCurrPgm;
 
-        public void Bind(IPgmPrime iPgmPrime) {
-            _iPgmArr = iPgmPrime.IPgmArr;
+        public void Bind(IPgmPrm iPgmPrm) {
+            _iPgmArr = iPgmPrm.IPgmArr;
         }
 
         public void Init() {
             _iCurrPgm = null;
-            Exe(_iPgmArr[0]);
         }
 
         public void InvokeUpd() {
@@ -21,6 +23,10 @@
         }
 
         public void Exe(byte ePgm) { // excute specific program by Enum
+            if (Array.IndexOf(_iPgmArr, ePgm) == -1) {
+                Debug.LogError("PgmMgr Exe( ) -- (byte)ePgm = " + ePgm + " is not included");
+                return;
+            }
             if (_iCurrPgm != null) {
                 if (_iPgmArr[ePgm] == _iCurrPgm) {
                     return;

@@ -1,6 +1,6 @@
 ﻿namespace T {
 
-    public interface IPgmPrime {
+    public interface IPgmPrm {
 
         IPgm[] IPgmArr { get; }
     }

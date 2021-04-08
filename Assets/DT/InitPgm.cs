@@ -21,7 +21,7 @@ namespace DT {
             // VwMgr.Ins.Create();
 
             // Debug.Log("DT) init program --> executed");
-            LangMgr.Ins.Change(ELang.ZH_CN);
+            // LangMgr.Ins.Chg(ELang.ZH_CN);
             Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
 
             // LangMgr.Ins.Change((byte)ELang.EN_US);
@@ -29,6 +29,8 @@ namespace DT {
 
             // LangMgr.Ins.Change(SystemLanguage.ChineseTraditional);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
+
+            // VwMgr.Ins.Set((byte)EVw.Menu);
 
             PgmMgr.Ins.Next();
         }

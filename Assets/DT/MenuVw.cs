@@ -1,12 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using T;
 
 namespace DT {
 
-    public class MenuVw : IVw {
+    public class MenuVw : Vw, IVw {
 
-        public void Set() {
-
-        }
+        
     }
 }

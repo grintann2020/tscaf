@@ -10,12 +10,13 @@ namespace T {
         public void Bind(Settings settings) {
             _settings = settings;
             _scrRez = _settings.ScrRez;
-            PrimeMgr.Ins.Bind(_settings.EGame);
+            PrmMgr.Ins.Bind(_settings.EGame);
         }
 
         public void Init() {
             Setting();
             PgmMgr.Ins.Init();
+            PgmMgr.Ins.Exe(0);
         }
 
         public void Setting() {

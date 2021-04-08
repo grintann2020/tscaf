@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace T {
 
     public interface IVw {
 
-        void Set();
+        void SetCam(Camera cam);
+        void SetCamProj(SCamProj sCamProj);
     }
 }

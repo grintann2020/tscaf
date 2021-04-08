@@ -13,21 +13,16 @@ namespace DT {
         Test,
     }
 
-    public class LangPrime : ILangPrime {
+    public class LangPrm : ILangPrm {
 
-        public ELang[] LangArr { get {return _langArr; } }
+        public ELang[] LangArr { get { return _langArr; } }
         public string[][] TermArr { get { return _termArr; } }
-        private ELang[] _langArr = new ELang[] {
-            ELang.EN_US,
-            ELang.ZH_CN,
-            ELang.ZH_TW,
-            ELang.KO,
-        };
+        private ELang[] _langArr;
         private string[][] _termArr = new string[Enum.GetNames(typeof(ETerm)).Length][];
 
-        public LangPrime() {
+        public LangPrm() {
             float stampA = UnityEngine.Time.realtimeSinceStartup;
-            // {EN_US, ZH_CN, ZH_TW, KO}
+            _langArr = new ELang[] { ELang.EN, ELang.ZH_CN, ELang.ZH_TW, ELang.KO };
             _termArr[(ushort)ETerm.Zero_U] = new string[] { "ZERO", "零", "零" };
             _termArr[(ushort)ETerm.One_U] = new string[] { "ONE", "壹", "壹" };
             _termArr[(ushort)ETerm.Two_U] = new string[] { "TWO", "贰", "貳" };
