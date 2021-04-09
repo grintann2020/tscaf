@@ -7,7 +7,6 @@ namespace T {
 
         private SCamPrj[] _sCamPrjArr;
         private IVw[] _iVwArr;
-        // private IVw _iCurrVw;
 
         public void Bind(IVwPrm iVwPrm) {
             _sCamPrjArr = iVwPrm.SCamPrjArr;
@@ -22,10 +21,6 @@ namespace T {
             _iVwArr[eVw].SetCam(cam);
         }
 
-        public void SetCam(IVw iVw, Camera cam) {
-            iVw.SetCam(cam);
-        }
-
         public void SetCamPrj(byte eVw, byte eCamPrj) {
             _iVwArr[eVw].SetCamPrj(_sCamPrjArr[eCamPrj]);
         }
@@ -34,16 +29,8 @@ namespace T {
             return _iVwArr[eVw];
         }
 
-        public void Enbl(byte eVw) {
-            _iVwArr[eVw].Enbl();
-        }
-
-        public void Dsbl(byte eVw) {
-            _iVwArr[eVw].Enbl();
-        }
-
-        public void Mv(byte eVw, byte eMv) {
-
+        public void Act(byte eVw, byte eAct) {
+            _iVwArr[eVw].Act(eAct);
         }
     }
 }

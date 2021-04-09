@@ -4,8 +4,9 @@ namespace T {
 
     public class Vw {
         
+        protected delegate void _dAct();
         protected Camera _cam;
-
+        
         public void SetCam(Camera cam) {
             _cam = cam;
         }
@@ -19,12 +20,12 @@ namespace T {
             _cam.farClipPlane = camPoj.Far;
         }
 
-        public void Enbl() {
-           _cam.enabled = true; 
-        }
+        // public void Enbl() {
+        //    _cam.enabled = true; 
+        // }
 
-        public void Dsbl() {
-           _cam.enabled = false; 
-        }
+        // public void Dsbl() {
+        //    _cam.enabled = false; 
+        // }
     }
 }
