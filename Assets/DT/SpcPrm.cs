@@ -1,11 +1,10 @@
 using System;
-using UnityEngine;
 using T;
 
 namespace DT {
 
     public enum ESpc : byte {
-        Spc00, Spc01
+        Squ, Hex
     }
 
     public class SpcPrm : ISpcPrm {
@@ -14,7 +13,8 @@ namespace DT {
         private ISpc[] _iSpcArr = new ISpc[Enum.GetNames(typeof(ESpc)).Length];
 
         public SpcPrm() {
-
+            _iSpcArr[(byte)ESpc.Squ] = new SquSpc();
+            _iSpcArr[(byte)ESpc.Hex] = new HexSpc(); // For Test
         }
     }
 }

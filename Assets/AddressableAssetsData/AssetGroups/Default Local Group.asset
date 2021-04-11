@@ -16,13 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: cdddf20a86c9ad94087ce2ac808e3a5e
-  m_SerializeEntries:
-  - m_GUID: 4fe7f90a3ab91c1499c58793c3767001
-    m_Address: Assets/Materials/Red.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 720cef4c3a121714289b6c5bf1031671, type: 2}
   m_SchemaSet:

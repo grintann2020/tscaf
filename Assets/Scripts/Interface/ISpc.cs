@@ -4,6 +4,7 @@ namespace T {
 
         void Init();
         void Constr();
+        void Estb();
         void Elim();
     }
 }
