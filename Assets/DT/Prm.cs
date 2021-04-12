@@ -8,7 +8,7 @@ namespace DT {
         public ILangPrm ILangPrm { get { return new LangPrm(); } }
         public IVwPrm IVwPrm { get { return new VwPrm(); } }
         public IIaPrm IIaPrm { get { return new IaPrm(); } }
-        public ISpcPrm ISpcPrm { get { return new SpcPrm(); } }
+        public IPlcPrm IPlcPrm { get { return new PlcPrm(); } }
         public IStgPrm IStgPrm { get { return new StgPrm(); } }
 
         public void Bind() {
@@ -16,7 +16,7 @@ namespace DT {
             LangMgr.Ins.Bind(ILangPrm);
             VwMgr.Ins.Bind(IVwPrm);
             IaMgr.Ins.Bind(IIaPrm);
-            SpcMgr.Ins.Bind(ISpcPrm);
+            PlcMgr.Ins.Bind(IPlcPrm);
             StgMgr.Ins.Bind(IStgPrm);
         }
     } 

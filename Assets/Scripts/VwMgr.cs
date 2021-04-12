@@ -4,11 +4,11 @@ namespace T {
 
     public class VwMgr : Singleton<VwMgr> {
 
-        private SCamPrj[] _sCamPrjArr;
+        private SCamPrj[] _sPrjArr;
         private IVw[] _iVwArr;
 
         public void Bind(IVwPrm iVwPrm) {
-            _sCamPrjArr = iVwPrm.SCamPrjArr;
+            _sPrjArr = iVwPrm.SPrjArr;
             _iVwArr = iVwPrm.IVwArr;
         }
 
@@ -20,8 +20,8 @@ namespace T {
             _iVwArr[eVw].SetCam(cam);
         }
 
-        public void SetCamPrj(byte eVw, byte eCamPrj) {
-            _iVwArr[eVw].SetCamPrj(_sCamPrjArr[eCamPrj]);
+        public void SetPrj(byte eVw, byte ePrj) {
+            _iVwArr[eVw].SetPrj(_sPrjArr[ePrj]);
         }
 
         public IVw Get(byte eVw) {

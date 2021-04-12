@@ -30,7 +30,7 @@ namespace DT {
 
             // Test VwMgr
             VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);
-            VwMgr.Ins.SetCamPrj((byte)EVw.Menu, (byte)ECamPrj.Menu);
+            VwMgr.Ins.SetPrj((byte)EVw.Menu, (byte)ECamPrj.Menu);
             // VwMgr.Ins.Act((byte)EVw.Menu, (byte)MenuVw.EAct.Test);
             // VwMgr.Ins.Act((byte)EVw.Menu, (byte)MenuVw.EAct.GG);
             // VwMgr.Ins.Act((byte)EVw.Play, (byte)PlayVw.EAct.P1);

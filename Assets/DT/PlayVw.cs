@@ -6,14 +6,13 @@ namespace DT {
 
     public class PlayVw : Vw, IVw {
 
-        private _dAct[] _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
-
         public enum EAct {
             P1, P2, P3
         }
 
-        public PlayVw() {
-            _defOrnt = new SOrntC3(new SCoord3(12.0f, 13.0f, 15.0f), new SCoord3(0.0f, 0.0f, 0.0f));
+        private _dAct[] _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
+
+        public PlayVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
             _dActArr[(byte)EAct.P1] = P1;
             _dActArr[(byte)EAct.P2] = P2;
         }
