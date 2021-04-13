@@ -3,26 +3,35 @@ using T;
 
 namespace DT {
 
-    public enum ESpc : byte {
-        Squ, Hex
-    }
+    // public enum ESquSpc : byte {
+    //     SquA
+    // }
+
+    // public enum EHexSpc : byte {
+    //     HexA
+    // }
 
     public enum EPlc : byte {
-        ATut00, ATut01
+        ATut0, ATut1, XHex1
     }
 
-    public class PlcPrm : IPlcPrm {
+    public class PlcPrm : IPlcPrm { // place prime
         
-        public ISpc[] ISpcArr { get { return _iSpcArr; } }
+        // public ISpc<Squ>[] ISquSpcArr { get { return _iSquSpcArr; } }
+        // public ISpc<Hex>[] IHexSpcArr { get { return _iHexSpcArr; } }
         public IPlc[] IPlcArr { get { return _iPlcArr; } }
-        private ISpc[] _iSpcArr = new ISpc[Enum.GetNames(typeof(ESpc)).Length];
+        // private ISpc<Squ>[] _iSquSpcArr = new ISpc<Squ>[Enum.GetNames(typeof(ESquSpc)).Length];
+        // private ISpc<Hex>[] _iHexSpcArr = new ISpc<Hex>[Enum.GetNames(typeof(EHexSpc)).Length];
         private IPlc[] _iPlcArr = new IPlc[Enum.GetNames(typeof(EPlc)).Length];
 
         public PlcPrm() {
-            _iSpcArr[(byte)ESpc.Squ] = new SquSpc();
-            _iSpcArr[(byte)ESpc.Hex] = new HexSpc(); // For Test
-            _iPlcArr[(byte)EPlc.ATut00] = new ATut0Plc(_iSpcArr[(byte)ESpc.Squ]);
-            _iPlcArr[(byte)EPlc.ATut01] = new ATut1Plc(_iSpcArr[(byte)ESpc.Squ]);
+            // _iSquSpcArr[(byte)ESquSpc.SquA] = new SquSpc<Squ>(new SquCalc(), 1);
+            // _iHexSpcArr[(byte)EHexSpc.HexA] = new HexSpc<Hex>(new HexCalc(), 1); // For Test
+            ISpc<Squ> iSquSpc = new SquSpc<Squ>(new SquCalc(), 1);
+            ISpc<Hex> iHexSpc = new HexSpc<Hex>(new HexCalc(), 1); // For Test
+            _iPlcArr[(byte)EPlc.ATut0] = new ATut0Plc<Squ>(iSquSpc);
+            _iPlcArr[(byte)EPlc.ATut1] = new ATut0Plc<Squ>(iSquSpc);
+            _iPlcArr[(byte)EPlc.XHex1] = new ATut0Plc<Hex>(iHexSpc);
         }
     }
 }

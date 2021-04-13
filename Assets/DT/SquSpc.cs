@@ -1,42 +1,32 @@
+using UnityEngine;
 using T;
 
 namespace DT {
 
-    public enum ESquDir {
+    public enum ESquDir { // don't move the enum to namespace T
         N, E, W, S, NW, NE, SW, SE,
     }
 
-    public class SquSpc : ISpc {
+    public class SquSpc<T> : ISpc<T> {
 
-        public void Init() {
+        private SquCalc _calc;
+        private byte _uWd; // unit width
 
+        public SquSpc(SquCalc calc, byte uWd) {
+            _calc = calc;
+            _uWd = uWd;
         }
 
-        public void Constr() {
-
-        }
-
-        public void Estb() {
-
-        }
-
-        public void Elim() {
-
+        public T[][] Abstr(ushort[][] blkArr) {
+            Debug.Log("SquSpc -- Abstr( )");
+            ushort rows = (ushort)blkArr.GetLength(0);
+            ushort cols = (ushort)blkArr.GetLength(1);
+            T[][] squArr = new T[rows][];
+            return squArr;
+            // SCoord2 startPos = _calc.GetCntr(cols, rows, colSpacing, rowSpacing);
         }
     }
 }
-
-
-// using System;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using Unity.Entities;
-// using Unity.Transforms;
-// using Unity.Rendering;
-// using Unity.Mathematics;
-// using Unity.Collections;
-// using Unity.Physics;
-// // using Unity.Collections.LowLevel.Unsafe;
 
 // namespace T {
 //     public class Space {

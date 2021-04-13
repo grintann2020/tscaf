@@ -2,21 +2,12 @@ using T;
 
 namespace DT {
 
-    public class ATut0Plc : Plc, IPlc {
+    public class ATut0Plc<T> : Plc<T>, IPlc {
 
-        public ATut0Plc(ISpc iSpc) : base(iSpc) {
+        private SquSpc<T> _squSpc;
 
-        }
-
-        public void Constr() {
-
-        }
-
-        public void Estb() {
-
-        }
-
-        public void Elim() {
+        public ATut0Plc(ISpc<T> iSpc) : base(iSpc) {
+        // public ATut0Plc() {
 
         }
     }

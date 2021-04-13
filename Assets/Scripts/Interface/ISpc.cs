@@ -1,10 +1,7 @@
 namespace T {
 
-    public interface ISpc {
+    public interface ISpc<T> {
 
-        void Init();
-        void Constr();
-        void Estb();
-        void Elim();
+        T[][] Abstr(ushort[][] blkArr);
     }
 }
