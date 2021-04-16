@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using T;
 
 namespace DT {
@@ -31,14 +30,6 @@ namespace DT {
             _resArr[(ushort)ERes.BoxBlue] = new object[] { EType.GO, (byte)EResLbl.test3, "BoxBlue", null };
             _resArr[(ushort)ERes.BoxBlack] = new object[] { EType.GO, (byte)EResLbl.test3, "BoxBlack", null };
             _resArr[(ushort)ERes.BoxWhite] = new object[] { EType.GO, (byte)EResLbl.test3, "BoxWhite", null };
-
-            // object[] oo = _resArr[(ushort)ERes.CubeRed];
-            // Debug.Log(
-            //     oo[0]
-            // );
-            // Debug.Log(
-            //     oo[1]
-            // );
         }
     }
 }

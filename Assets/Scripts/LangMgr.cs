@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +8,7 @@ namespace T {
 
         private object[][][] _termArr;
         private ELang _eCurrLang;
-        private ELang[] _sysLangArr = new ELang[] { // the array of ELang, which contrast system language
+        private ELang[] _sysLangArr = new ELang[] { // the array tf ELang, which contrast system language
             ELang.AF, /* Afrikaans = 0 */ ELang.AR, /* Arabic = 1 */
             ELang.EU, /* Basque = 2 */ ELang.BE, /* Belarusian = 3 */ ELang.BG, /* Bulgarian = 4 */
             ELang.CA, /* Catalan = 5 */ ELang.ZH_CN, /* Chinese = 6 */ ELang.CS, /* Czech = 7 */
@@ -64,18 +63,21 @@ namespace T {
         }
 
         public string Term(ushort eTerm) {
-            for (byte o = 0; o < _termArr[eTerm].Length; o++) {
-                if ((ELang)_termArr[eTerm][o][0] == _eCurrLang) {
-                    return (string)_termArr[eTerm][o][1];
+            // _termArr[eTerm][t] -- term in multiple language
+            // _termArr[eTerm][t][0] -- ELang
+            // _termArr[eTerm][t][0] -- System.String
+            for (byte t = 0; t < _termArr[eTerm].Length; t++) {
+                if ((ELang)_termArr[eTerm][t][0] == _eCurrLang) {
+                    return (string)_termArr[eTerm][t][1];
                 }
             }
             return (string)_termArr[eTerm][0][1];
         }
 
         public string Term(ushort eTerm, ELang eLang) {
-            for (byte o = 0; o < _termArr[eTerm].Length; o++) {
-                if ((ELang)_termArr[eTerm][o][0] == eLang) {
-                    return (string)_termArr[eTerm][o][1];
+            for (byte t = 0; t < _termArr[eTerm].Length; t++) {
+                if ((ELang)_termArr[eTerm][t][0] == eLang) {
+                    return (string)_termArr[eTerm][t][1];
                 }
             }
             return (string)_termArr[eTerm][0][1];

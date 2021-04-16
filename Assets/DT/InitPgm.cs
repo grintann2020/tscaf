@@ -23,12 +23,13 @@ namespace DT {
             LangMgr.Ins.Chg(ELang.ZH_CN);
             // LangMgr.Ins.Chg((byte)ELang.EN_US);
             Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Three_U));
+            Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U, ELang.EN));
 
             // LangMgr.Ins.Chg(SystemLanguage.ChineseTraditional);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
 
-            // ResMgr.Ins.Load((byte)ERes.CubeRed);
-            // ResMgr.Ins.Load((byte)ERes.Green);
+            ResMgr.Ins.Load((byte)ERes.CubeRed);
+            ResMgr.Ins.Load((byte)ERes.Green);
 
             
 

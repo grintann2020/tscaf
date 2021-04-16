@@ -5,5 +5,6 @@ namespace T {
         GO, // GameObject
         Mat, // Material
         Spr, // Sprite
+        Txr, // Texture
     }
 }
