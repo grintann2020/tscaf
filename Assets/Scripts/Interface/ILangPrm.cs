@@ -2,7 +2,7 @@
 
     public interface ILangPrm {
 
-        ELang[] LangArr { get; }
-        string[][] TermArr { get; }
+        // ELang[] LangArr { get; }
+        object[][][] TermArr { get; }
     }
 }

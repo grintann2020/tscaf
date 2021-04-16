@@ -7,6 +7,7 @@ namespace T {
         private IPrm[] _iPrmArr = new IPrm[Enum.GetNames(typeof(EGame)).Length];
 
         public PrmMgr() {
+            // here has already checked, the new operate script will not execute unless Prim.Bind()
             _iPrmArr[(byte)EGame.DT] = new DT.Prm();
             _iPrmArr[(byte)EGame.CS] = new CS.Prm();
         }

@@ -7,8 +7,7 @@ namespace T {
 
     public class LangMgr : Singleton<LangMgr> {
 
-        private ELang[] _langArr;
-        private string[][] _termArr;
+        private object[][][] _termArr;
         private ELang _eCurrLang;
         private ELang[] _sysLangArr = new ELang[] { // the array of ELang, which contrast system language
             ELang.AF, /* Afrikaans = 0 */ ELang.AR, /* Arabic = 1 */
@@ -36,7 +35,6 @@ namespace T {
         private List<Text> _txtLst;
 
         public void Bind(ILangPrm iLangPrm) {
-            _langArr = iLangPrm.LangArr;
             _termArr = iLangPrm.TermArr;
         }
 
@@ -66,11 +64,21 @@ namespace T {
         }
 
         public string Term(ushort eTerm) {
-            return _termArr[eTerm][Array.IndexOf(_langArr, _eCurrLang)];
+            for (byte o = 0; o < _termArr[eTerm].Length; o++) {
+                if ((ELang)_termArr[eTerm][o][0] == _eCurrLang) {
+                    return (string)_termArr[eTerm][o][1];
+                }
+            }
+            return (string)_termArr[eTerm][0][1];
         }
 
         public string Term(ushort eTerm, ELang eLang) {
-            return _termArr[eTerm][Array.IndexOf(_langArr, eLang)];
+            for (byte o = 0; o < _termArr[eTerm].Length; o++) {
+                if ((ELang)_termArr[eTerm][o][0] == eLang) {
+                    return (string)_termArr[eTerm][o][1];
+                }
+            }
+            return (string)_termArr[eTerm][0][1];
         }
 
         public void Txt() {

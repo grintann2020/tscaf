@@ -15,37 +15,34 @@ namespace DT {
 
     public class LangPrm : ILangPrm {
 
-        public ELang[] LangArr { get { return _langArr; } }
-        public string[][] TermArr { get { return _termArr; } }
-        private ELang[] _langArr;
-        private string[][] _termArr = new string[Enum.GetNames(typeof(ETerm)).Length][];
+        public object[][][] TermArr { get { return _termArr; } }
+        private object[][][] _termArr = new object[Enum.GetNames(typeof(ETerm)).Length][][];
 
         public LangPrm() {
             float stampA = UnityEngine.Time.realtimeSinceStartup;
-            _langArr = new ELang[] { ELang.EN, ELang.ZH_CN, ELang.ZH_TW, ELang.KO };
-            _termArr[(ushort)ETerm.Zero_U] = new string[] { "ZERO", "零", "零" };
-            _termArr[(ushort)ETerm.One_U] = new string[] { "ONE", "壹", "壹" };
-            _termArr[(ushort)ETerm.Two_U] = new string[] { "TWO", "贰", "貳" };
-            _termArr[(ushort)ETerm.Three_U] = new string[] { "THREE", "叁", "參" };
-            _termArr[(ushort)ETerm.Four_U] = new string[] { "FOUR", "肆", "肆" };
-            _termArr[(ushort)ETerm.Five_U] = new string[] { "FIVE", "伍", "伍" };
-            _termArr[(ushort)ETerm.Six_U] = new string[] { "SIX", "陆", "陸" };
-            _termArr[(ushort)ETerm.Seven_U] = new string[] { "SEVEN", "柒", "柒" };
-            _termArr[(ushort)ETerm.Eight_U] = new string[] { "EIGHT", "捌", "捌" };
-            _termArr[(ushort)ETerm.Nine_U] = new string[] { "NINE", "玖", "玖" };
-            _termArr[(ushort)ETerm.Ten_U] = new string[] { "TEN", "拾", "拾" };
+            _termArr[(ushort)ETerm.Zero_U] = new object[][] { new object[] { ELang.EN, "ZERO" }, new object[] { ELang.ZH_CN, "零" }, new object[] { ELang.ZH_TW, "零" } };
+            _termArr[(ushort)ETerm.One_U] = new object[][] { new object[] { ELang.EN, "ONE" }, new object[] { ELang.ZH_CN, "壹" }, new object[] { ELang.ZH_TW, "壹" } };
+            _termArr[(ushort)ETerm.Two_U] = new object[][] { new object[] { ELang.EN, "TWO" }, new object[] { ELang.ZH_CN, "贰" }, new object[] { ELang.ZH_TW, "貳" } };
+            _termArr[(ushort)ETerm.Three_U] = new object[][] { new object[] { ELang.EN, "THREE" }, new object[] { ELang.ZH_CN, "叁" }, new object[] { ELang.ZH_TW, "參" } };
+            _termArr[(ushort)ETerm.Zero_U] = new object[][] { new object[] { ELang.EN, "FOUR" }, new object[] { ELang.ZH_CN, "肆" }, new object[] { ELang.ZH_TW, "肆" } };
+            _termArr[(ushort)ETerm.One_U] = new object[][] { new object[] { ELang.EN, "FIVE" }, new object[] { ELang.ZH_CN, "伍" }, new object[] { ELang.ZH_TW, "伍" } };
+            _termArr[(ushort)ETerm.Two_U] = new object[][] { new object[] { ELang.EN, "SIX" }, new object[] { ELang.ZH_CN, "陆" }, new object[] { ELang.ZH_TW, "陸" } };
+            _termArr[(ushort)ETerm.Three_U] = new object[][] { new object[] { ELang.EN, "SEVEN" }, new object[] { ELang.ZH_CN, "柒" }, new object[] { ELang.ZH_TW, "柒" } };
+            _termArr[(ushort)ETerm.Three_U] = new object[][] { new object[] { ELang.EN, "EIGHT" }, new object[] { ELang.ZH_CN, "捌" }, new object[] { ELang.ZH_TW, "捌" } };
+            _termArr[(ushort)ETerm.Three_U] = new object[][] { new object[] { ELang.EN, "NINE" }, new object[] { ELang.ZH_CN, "玖" }, new object[] { ELang.ZH_TW, "玖" } };
+            _termArr[(ushort)ETerm.Three_U] = new object[][] { new object[] { ELang.EN, "TEN" }, new object[] { ELang.ZH_CN, "拾" }, new object[] { ELang.ZH_TW, "拾" } };
 
-            _termArr[(ushort)ETerm.Zero_L] = new string[] { "zero", "〇", "〇" };
-            _termArr[(ushort)ETerm.One_L] = new string[] { "one", "一", "一" };
-            _termArr[(ushort)ETerm.Two_L] = new string[] { "two", "二", "二" };
-            _termArr[(ushort)ETerm.Three_L] = new string[] { "three", "三", "三" };
-            _termArr[(ushort)ETerm.Four_L] = new string[] { "four", "四", "四" };
-            _termArr[(ushort)ETerm.Five_L] = new string[] { "five", "五", "五" };
-            _termArr[(ushort)ETerm.Six_L] = new string[] { "six", "六", "六" };
-            _termArr[(ushort)ETerm.Seven_L] = new string[] { "seven", "七", "七" };
-            _termArr[(ushort)ETerm.Eight_L] = new string[] { "eight", "八", "八" };
-            _termArr[(ushort)ETerm.Nine_L] = new string[] { "nine", "九", "九" };
-            _termArr[(ushort)ETerm.Ten_L] = new string[] { "ten", "十", "十" };
+            // _termArr[(ushort)ETerm.Zero_L] = new string[] { "zero", "〇", "〇" };
+            // _termArr[(ushort)ETerm.One_L] = new string[] { "one", "一", "一" };
+            // _termArr[(ushort)ETerm.Two_L] = new string[] { "two", "二", "二" };
+            // _termArr[(ushort)ETerm.Three_L] = new string[] { "three", "三", "三" };
+            // _termArr[(ushort)ETerm.Four_L] = new string[] { "four", "四", "四" };
+            // _termArr[(ushort)ETerm.Five_L] = new string[] { "five", "五", "五" };
+            // _termArr[(ushort)ETerm.Six_L] = new string[] { "six", "六", "六" };
+            // _termArr[(ushort)ETerm.Seven_L] = new string[] { "seven", "七", "七" };
+            // _termArr[(ushort)ETerm.Eight_L] = new string[] { "eight", "八", "八" };
+            // _termArr[(ushort)ETerm.Nine_L] = new string[] { "nine", "九", "九" };
+            // _termArr[(ushort)ETerm.Ten_L] = new string[] { "ten", "十", "十" };
 
             // _termArr = new string[Enum.GetNames(typeof(ETerm)).Length][];
             // _termArr[(ushort)ETerm.GrinBit] = new string[] { "Grin Bit", "Grin Bit" };

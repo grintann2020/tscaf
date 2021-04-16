@@ -13,20 +13,24 @@ namespace DT {
 
         public void Exe() {
             LangMgr.Ins.Init();
+            ResMgr.Ins.Init();
             VwMgr.Ins.Init();
             UIMgr.Ins.Init();
             IaMgr.Ins.Init();
             StgMgr.Ins.Init();
 
             // Test LangMgr
-            // LangMgr.Ins.Chg(ELang.ZH_CN);
-            // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
-
+            LangMgr.Ins.Chg(ELang.ZH_CN);
             // LangMgr.Ins.Chg((byte)ELang.EN_US);
-            // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
+            Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Three_U));
 
             // LangMgr.Ins.Chg(SystemLanguage.ChineseTraditional);
             // Debug.Log(LangMgr.Ins.Term((ushort)ETerm.Six_U));
+
+            // ResMgr.Ins.Load((byte)ERes.CubeRed);
+            // ResMgr.Ins.Load((byte)ERes.Green);
+
+            
 
             // Test VwMgr
             VwMgr.Ins.SetCam((byte)EVw.Menu, Camera.main);

@@ -22,7 +22,7 @@ namespace T {
             GameMgr.Ins.Init();
 
             // For Test
-            TestTxt.text = LangMgr.Ins.Term((ushort)ETerm.Three_U);
+            // TestTxt.text = LangMgr.Ins.Term((ushort)ETerm.Three_U);
             // LangMgr.Ins.Change(ELang.ZH_CN);
             // TestTxt.text = LangMgr.Ins.TermArr[(ushort)ETerm.Three_U][(byte)LangMgr.Ins.ECurrLang];
         }
@@ -37,7 +37,7 @@ namespace T {
         }
 
         public void ShowText(int eTerm) {
-            Debug.Log(LangMgr.Ins.Term((ushort)eTerm) +", test "+ LangMgr.Ins.Term((ushort)eTerm, ELang.ZH_TW));
+            // Debug.Log(LangMgr.Ins.Term((ushort)eTerm) +", test "+ LangMgr.Ins.Term((ushort)eTerm, ELang.ZH_TW));
         }
     }
 }

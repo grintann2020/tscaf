@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using T;
 
 namespace CS {
@@ -20,6 +21,8 @@ namespace CS {
             _iPgmArr[(byte)EPgm.Launch] = _launchPgm;
 
             _initPgm.Next = _launchPgm;
+
+            Debug.Log("CS -- _initPgm.Next = _launchPgm");
         }
     }
 }
