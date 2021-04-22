@@ -10,6 +10,7 @@ namespace T {
         protected IBlk[][] _iBlkArr;
         protected bool[][] _defBoolArr, _boolArr;
         protected ushort[][] _defObjArr, _objArr;
+        
 
         public Plc(ISpc iSpc) {
             // Debug.Log("Plc -- Contructor( ) -- " + iSpc);

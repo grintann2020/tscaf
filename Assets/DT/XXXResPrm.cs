@@ -3,9 +3,9 @@ using T;
 
 namespace DT {
 
-    public enum EResLbl : byte {
-        UI, SplhUI, test1, test2, test3
-    }
+    // public enum EResLbl : byte {
+    //     UI, SplhUI, test1, test2, test3
+    // }
 
     public enum ERes : ushort {
         CubeRed, SphereRed, CylinderRed,
@@ -14,17 +14,17 @@ namespace DT {
         BoxRed, BoxGreen, BoxBlue, BoxBlack, BoxWhite,
     }
 
-    public class ResPrm : IResPrm {
+    public class XXXResPrm : IResPrm {
 
         public object[][] ResArr { get { return _resArr; } }
         private object[][] _resArr = new object[Enum.GetNames(typeof(ERes)).Length][];
 
-        public ResPrm() {
-            _resArr[(ushort)ERes.SplhUIA1] = new object[] { "SplhUIA1", null };
-            _resArr[(ushort)ERes.SplhUIA2] = new object[] { "SplhUIA2", null };
-            _resArr[(ushort)ERes.CubeRed] = new object[] { "CubeRed", null };
-            _resArr[(ushort)ERes.SphereRed] = new object[] { "SphereRed", null };
-            _resArr[(ushort)ERes.CylinderRed] = new object[] { "CylinderRed", null };
+        public XXXResPrm() {
+            // _resArr[(ushort)ERes.SplhUIA1] = new object[] { "SplhUIA1", null };
+            // _resArr[(ushort)ERes.SplhUIA2] = new object[] { "SplhUIA2", null };
+            // _resArr[(ushort)ERes.CubeRed] = new object[] { "CubeRed", null };
+            // _resArr[(ushort)ERes.SphereRed] = new object[] { "SphereRed", null };
+            // _resArr[(ushort)ERes.CylinderRed] = new object[] { "CylinderRed", null };
             
             // _resArr[(ushort)ERes.Red] = new object[] { "Red" };
             // _resArr[(ushort)ERes.Green] = new object[] { "Green" };

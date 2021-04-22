@@ -7,7 +7,7 @@ namespace CS {
 
         public IPgmPrm IPgmPrm { get { return new PgmPrm(); } }
         public ILangPrm ILangPrm { get { return new LangPrm(); } }
-        public IResPrm IResPrm { get { return new ResPrm(); } }
+        // public IResPrm IResPrm { get { return new ResPrm(); } }
         public IPlcPrm IPlcPrm { get { return new PlcPrm(); } }
         public IVwPrm IVwPrm { get { return new VwPrm(); } }
         public IIaPrm IIaPrm { get { return new IaPrm(); } }

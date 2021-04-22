@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace T {
 
     public class UIMgr : Sgltn<UIMgr> {
@@ -10,6 +12,10 @@ namespace T {
 
         public void Init() {
 
+        }
+
+        public void SetCanv(byte eUI, Canvas canv) {
+            _iUIArr[eUI].SetCanv(canv);
         }
 
         public IUI GetUI(byte eUI) {

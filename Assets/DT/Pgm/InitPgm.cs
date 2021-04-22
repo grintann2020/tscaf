@@ -7,14 +7,16 @@ namespace DT {
     public class TestPgm : SgltnMB<TestPgm> {
 
         public void TestWait(int sec) {
-            StartCoroutine(TestLoad(sec));
+            StartCoroutine(TestW(sec));
         }
 
-        IEnumerator TestLoad(int sec) {
-
+        IEnumerator TestW(int sec) {
             yield return new WaitForSeconds(sec);
-            UIMgr.Ins.Unstl((byte)EUI.Splh);
-            // Debug.Log("(byte)EUI.Splh)).SplhUIA1 --> "+((SplhUI)UIMgr.Ins.GetUI((byte)EUI.Splh)).SplhUIA1);
+
+            // GameObject go = GameObject.Find("SplhUIA1(Clone)");
+            // ResMgr.Ins.Rls<GameObject>(go);
+            // GameObject go2 = GameObject.Find("SplhUIA2(Clone)");
+            // ResMgr.Ins.Rls<GameObject>(go2);
         }
     }
 
@@ -36,8 +38,18 @@ namespace DT {
 
             // System.Threading.Thread.Sleep(1000);
             // test UIMgr
-            UIMgr.Ins.Instl((byte)EUI.Splh);
-            
+            UIMgr.Ins.SetCanv((byte)EUI.Splh, GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>());
+
+            // UIMgr.Ins.Instl((byte)EUI.Splh);
+
+            // TestPgm.Ins.TestWait(3);
+
+            // ResMgr.Ins.Inst("SplhUIA1", () => {
+            //     TestPgm.Ins.TestWait(3);
+            // });
+
+            // ResMgr.Ins.Inst((ushort)ERes.SplhUIA2, () => {
+            // }, GameObject.FindGameObjectWithTag("MainCanvas").transform);
 
             // Test LangMgr
             LangMgr.Ins.Chg(ELang.ZH_CN);

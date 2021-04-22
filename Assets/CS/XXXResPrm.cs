@@ -10,12 +10,12 @@ namespace CS {
         Red, Green, Blue,
     }
 
-    public class ResPrm : IResPrm {
+    public class XXXResPrm : IResPrm {
 
         public object[][] ResArr { get { return _resArr; } }
         private object[][] _resArr = new object[Enum.GetNames(typeof(ERes)).Length][];
 
-        public ResPrm() {
+        public XXXResPrm() {
 
         }
     }

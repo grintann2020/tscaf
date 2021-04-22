@@ -4,22 +4,27 @@ namespace T {
 
     public class UI {
 
+        protected Canvas _canv;
+        protected object[][] _refArr;
         protected ushort[] _eResArr;
-        protected object[][] _objArr;
+        protected GameObject[] _goArr;
         protected object[] _elemArr;
+
+        public void SetCanv(Canvas canv) {
+            _canv = canv;
+        }
 
         public void Instl() {
             ResMgr.Ins.Load<GameObject>(_eResArr, () => {
-                Debug.Log("1 _eResArr[0] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[0]));
-                Debug.Log("1 _eResArr[1] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[1]));
-
-                ResMgr.Ins.Load<GameObject>(_eResArr, () => {
-                    Debug.Log("2 _eResArr[0] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[0]));
-                    Debug.Log("2 _eResArr[1] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[1]));
-                });
+                _goArr = new GameObject[_eResArr.Length];
+                for (byte e = 0; e < _eResArr.Length; e++) {
+                    _goArr[e] = GameObject.Instantiate(ResMgr.Ins.Get<GameObject>(_eResArr[e]), _canv.transform);
+                }
+                // Debug.Log("1 _eResArr[0] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[0]));
+                // Debug.Log("1 _eResArr[1] --> " + ResMgr.Ins.Get<GameObject>(_eResArr[1]));
             });
 
-            
+
             // string[] keyArr = Arr.Dim<string>(_objArr, 0);
             // ResMgr.Ins.Load<GameObject>(keyArr, (GameObject[] goArr) => {
             //     for (byte g = 0; g < _objArr.Length; g++) {
