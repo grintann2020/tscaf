@@ -10,9 +10,8 @@ namespace DT {
             Test, GG, ok
         }
 
-        private _dAct[] _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
-
         public FstVw(SCamPrj defProj, SOrnt3 defOrnt) : base(defProj, defOrnt) {
+            _dActArr = new _dAct[Enum.GetNames(typeof(EAct)).Length];
             _dActArr[(byte)EAct.Test] = Test;
             _dActArr[(byte)EAct.GG] = GG;
         }
@@ -21,9 +20,7 @@ namespace DT {
 
         }
 
-        public void Act(byte act) {
-            _dActArr[act].Invoke();
-        }
+        
 
         public void Test() {
             Debug.Log("FstVw -- Test()");

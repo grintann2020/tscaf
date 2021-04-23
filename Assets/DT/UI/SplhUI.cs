@@ -20,7 +20,7 @@ namespace DT {
             _keyArr[(byte)ESet.A1] = "SplhUIA1";
             _keyArr[(byte)ESet.A2] = "SplhUIA2";
 
-            _setArr = new GameObject[_keyArr.Length];
+            _setArr = new GameObject[Enum.GetNames(typeof(ESet)).Length];
             _setArr[(byte)ESet.A1] = null;
             _setArr[(byte)ESet.A2] = null;
 

@@ -22,6 +22,7 @@ namespace T {
             ResMgr.Ins.Inst(_keyArr, (GameObject[] resArr) => {
                 for (byte r = 0; r < resArr.Length; r++) {
                     _setArr[r] = resArr[r];
+                    Debug.Log(_setArr[r]);
                 }
                 for (byte r = 0; r < _elemArr.Length; r++) {
                     _elemArr[r][0] = GameObject.Find(_setArr[(byte)_elemArr[r][1]].name + "/" + (string)_elemArr[r][2]).GetComponent((Type)_elemArr[r][3]);

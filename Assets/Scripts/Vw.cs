@@ -5,6 +5,7 @@ namespace T {
     public class Vw {
 
         protected delegate void _dAct();
+        protected _dAct[] _dActArr;
         protected Camera _cam;
         private SCamPrj _defPrj;
         private SOrnt3 _defOrnt;
@@ -18,11 +19,6 @@ namespace T {
             _cam = cam;
         }
 
-        public void SetDef() {
-            SetPrj(_defPrj);
-            SetOrnt(_defOrnt);
-        }
-
         public void SetPrj(SCamPrj prj) {
             _cam.orthographic = prj.OP;
             _cam.orthographicSize = prj.OPSize;
@@ -32,9 +28,18 @@ namespace T {
             _cam.farClipPlane = prj.Far;
         }
 
+        public void SetDef() {
+            SetPrj(_defPrj);
+            SetOrnt(_defOrnt);
+        }
+
         public void SetOrnt(SOrnt3 ornt) {
             _cam.transform.position = new Vector3(ornt.A.X, ornt.A.Y, ornt.A.Z);
             _cam.transform.LookAt(new Vector3(ornt.B.X, ornt.B.Y, ornt.B.Z));
+        }
+
+        public void Act(byte eAct) {
+            _dActArr[eAct].Invoke();
         }
 
         // public void Enbl() {
