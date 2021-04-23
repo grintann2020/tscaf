@@ -31,10 +31,23 @@ namespace DT {
             _elemArr[(byte)EElem.ImgA1] = new object[] { null, ESet.A1, "ImgA1", typeof(Image) };
             _elemArr[(byte)EElem.TxtA1] = new object[] { null, ESet.A2, "TxtA1", typeof(Text) };
             _elemArr[(byte)EElem.BtnA1_RTf] = new object[] { null, ESet.A1, "BtnA1", typeof(RectTransform) };
+
+            _bssArr = new _bss[3];
+            _bssArr[0] = BtnA1_Bss;
         }
 
         public void InvkUpd() {
 
+        }
+
+        private void BtnA1_Bss() {
+            ((Button)_elemArr[(byte)EElem.BtnA1][0]).onClick.AddListener(() => {
+                Debug.Log("btnA1.onClick !");
+                ResMgr.Ins.Load<Sprite>("SprA2", (Sprite spr) => {
+                    ((Image)_elemArr[(byte)EElem.ImgA1][0]).sprite = spr;
+                    ResMgr.Ins.Rls<Sprite>(spr);
+                });
+            });
         }
     }
 }

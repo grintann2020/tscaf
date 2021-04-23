@@ -16,11 +16,12 @@ namespace DT {
 
         IEnumerator TestW(int sec, GameObject[] goArr = null) {
             yield return new WaitForSeconds(sec);
-            // UIMgr.Ins.Unstl((byte)EUI.Splh);
+            UIMgr.Ins.Unstl((byte)EUI.Splh);
             // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
             // UIMgr.Ins.DsblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
             // UIMgr.Ins.DsblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);
             yield return new WaitForSeconds(sec);
+            UIMgr.Ins.Instl((byte)EUI.Splh);
             // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnA1);
             // UIMgr.Ins.EnblElem((byte)EUI.Splh, (byte)SplhUI.EElem.BtnB2);
             // UIMgr.Ins.EnblSet((byte)EUI.Splh, (byte)SplhUI.ESet.A1);

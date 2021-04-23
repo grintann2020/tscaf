@@ -35,19 +35,19 @@ namespace T {
             dLoaded(objArr);
         }
 
-        public void Inst(string key, DCb<GameObject> dInsted, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
+        public void Inst(string key, DCb<GameObject> dInsted = null, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
             Addressables.InstantiateAsync(key, parent).Completed += (AsyncOperationHandle<GameObject> hdl) => {
                 dInsted(hdl.Result);
             };
         }
 
-        public void Inst(string key, DCb<GameObject> dInsted, Vector3 pos, Quaternion rot, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
+        public void Inst(string key, Vector3 pos, Quaternion rot, DCb<GameObject> dInsted = null, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
             Addressables.InstantiateAsync(key, pos, rot, parent).Completed += (AsyncOperationHandle<GameObject> hdl) => {
                 dInsted(hdl.Result);
             };
         }
 
-        public async void Inst(string[] keyArr, DCbArr<GameObject> dInsted, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
+        public async void Inst(string[] keyArr, DCbArr<GameObject> dInsted = null, Transform parent = null) { // Addressables.InstantiateAsync will clone asset directlty
             GameObject[] objArr = new GameObject[keyArr.Length];
             Task[] taskArr = new Task[keyArr.Length];
             AsyncOperationHandle<GameObject>[] hdlArr = new AsyncOperationHandle<GameObject>[keyArr.Length];

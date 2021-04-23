@@ -9,6 +9,8 @@ namespace T {
         protected string[] _keyArr;
         protected GameObject[] _setArr;
         protected object[][] _elemArr;
+        protected delegate void _bss();
+        protected _bss[] _bssArr;
         // _elemArr[(byte)ERes][0] --> unknown) Component
         // _elemArr[(byte)ERes][1] --> enum) ERes
         // _elemArr[(byte)ERes][2] --> string) name of reference GameObject
@@ -22,35 +24,38 @@ namespace T {
             ResMgr.Ins.Inst(_keyArr, (GameObject[] resArr) => {
                 for (byte r = 0; r < resArr.Length; r++) {
                     _setArr[r] = resArr[r];
-                    Debug.Log(_setArr[r]);
                 }
-                for (byte r = 0; r < _elemArr.Length; r++) {
-                    _elemArr[r][0] = GameObject.Find(_setArr[(byte)_elemArr[r][1]].name + "/" + (string)_elemArr[r][2]).GetComponent((Type)_elemArr[r][3]);
+                for (byte e = 0; e < _elemArr.Length; e++) {
+                    _elemArr[e][0] = GameObject.Find(_setArr[(byte)_elemArr[e][1]].name + "/" + (string)_elemArr[e][2]).GetComponent((Type)_elemArr[e][3]);
+                }
+                for (byte b = 0; b < _bssArr.Length; b++) {
+                    if (_bssArr[b] != null) {
+                        _bssArr[b].Invoke();
+                    }
                 }
             }, _canv.transform);
         }
 
         public void Unstl() {
             ResMgr.Ins.Rls<GameObject>(_setArr, () => {
-                for (byte r = 0; r < _setArr.Length; r++) {
-                    _setArr[r] = null;
+                for (byte s = 0; s < _setArr.Length; s++) {
+                    _setArr[s] = null;
                 }
-                for (byte r = 0; r < _elemArr.Length; r++) {
-                    _elemArr[r][0] = null;
-                    _elemArr[r][1] = null;
+                for (byte e = 0; e < _elemArr.Length; e++) {
+                    _elemArr[e][0] = null;
                 }
             });
         }
 
         public void Enbl() {
-            for (byte r = 0; r < _setArr.Length; r++) {
-                _setArr[r].SetActive(true);
+            for (byte s = 0; s < _setArr.Length; s++) {
+                _setArr[s].SetActive(true);
             }
         }
 
         public void Dsbl() {
-            for (byte r = 0; r < _setArr.Length; r++) {
-                _setArr[r].SetActive(false);
+            for (byte s = 0; s < _setArr.Length; s++) {
+                _setArr[s].SetActive(false);
             }
         }
 
