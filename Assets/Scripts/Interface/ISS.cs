@@ -1,12 +1,11 @@
 namespace T {
 
-    public interface IPlc {
+    public interface ISS {
 
         ushort Rows { get; }
         ushort Cols { get; }
-        bool[][] BoolArr { get; }
         ushort[][] ObjArr { get; }
-        void SetDef();
+        // void SetDef();
         void Constr();
         void Estb();
         void Elim();

@@ -16,7 +16,8 @@ namespace T {
         public void Init() {
             Setting();
             PgmMgr.Ins.Init();
-            PgmMgr.Ins.Exe(0);
+            // PgmMgr.Ins.Exe(0);
+            PgmMgr.Ins.Exe(3);
         }
 
         public void Setting() {

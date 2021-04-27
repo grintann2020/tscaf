@@ -7,7 +7,7 @@ namespace T {
         ILangPrm ILangPrm { get; }
         IVwPrm IVwPrm { get; }
         IIaPrm IIaPrm { get; }
-        IPlcPrm IPlcPrm { get; }
+        ISSPrm ISSPrm { get; }
         void Bind();
     }
 }

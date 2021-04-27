@@ -2,10 +2,10 @@ using T;
 
 namespace DT {
 
-    public class ATut0Stg : Stg, IStg {
+    public class XHexStg : Stg, IStg {
 
-        public ATut0Stg(ISpc iSpc) : base(iSpc) {
-            
+        public XHexStg(ISpc iSpc) : base(iSpc) {
+
         }
 
         public void Imp() {
