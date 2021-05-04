@@ -6,7 +6,7 @@ namespace T {
         byte[][][] CurArr { get; }
         void Dfl();
         void Alt(byte eAlt);
-        void Abstr(SCoord3 ctr);
-        void Cnstr();
+        void Cnstr(SCoord3 ctr);
+        void Estb();
     }
 }

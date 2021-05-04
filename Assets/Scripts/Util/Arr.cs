@@ -15,6 +15,8 @@ public static class Arr {
     public static T[] Rmv<T>(T[] arr, ushort idx) {
         if (arr == null) {
             return null;
+        } else if (arr.Length == 0) {
+            return arr;
         }
         T[] rslt = new T[arr.Length - 1];
         ushort r = 0;

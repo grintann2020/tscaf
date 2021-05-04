@@ -10,7 +10,7 @@ namespace T {
             _uHt = uHt;
         }
 
-        public abstract IBlk[][][] Abstr(byte[][][] eUArr, SCoord3 ctr);
-        public abstract void Cnstr(IBlk[][][] iBlkArr, string[][] uArr);
+        public abstract IBlk[][][] Cnstr(byte[][][] eUArr, SCoord3 ctr);
+        public abstract void Estb(IBlk[][][] iBlkArr, string[][] uArr);
     }
 }

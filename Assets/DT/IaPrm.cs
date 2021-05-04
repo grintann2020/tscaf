@@ -5,7 +5,7 @@ using T;
 namespace DT {
 
     public enum EIa : byte {
-        TestIa
+        Ia0, Ia1
     }
 
     public class IaPrm : IIaPrm {

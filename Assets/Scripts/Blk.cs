@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace T {
@@ -27,7 +28,11 @@ namespace T {
             _goArr = Arr.Add<GameObject>(_goArr, go);
         }
 
-        public void Otp(ushort idx) {
+        public void Otp(GameObject go) {
+            _goArr = Arr.Rmv<GameObject>(_goArr, (ushort)Array.IndexOf<GameObject>(_goArr, go));
+        }
+
+         public void Otp(ushort idx) {
             _goArr = Arr.Rmv<GameObject>(_goArr, idx);
         }
     }

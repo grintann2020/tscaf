@@ -14,7 +14,7 @@ namespace DT {
 
         }
 
-        public override IBlk[][][] Abstr(byte[][][] eUArr, SCoord3 ctr) {
+        public override IBlk[][][] Cnstr(byte[][][] eUArr, SCoord3 ctr) {
             byte rows = (byte)eUArr.Length;
             byte cols = (byte)eUArr[0].Length;
             byte lays = (byte)eUArr[0][0].Length;
@@ -80,27 +80,23 @@ namespace DT {
             return iBlkArr;
         }
 
-        public override void Cnstr(IBlk[][][] iBlkArr, string[][] uArr) {
-            // string[] keyArr = new string[0];
-            // Vector3[] posArr = new Vector3[0];
-            // Quaternion[] rotArr = new Quaternion[0];
+        public override void Estb(IBlk[][][] iBlkArr, string[][] uArr) {
             for (byte r = 0; r < iBlkArr.Length; r++) {
                 for (byte c = 0; c < iBlkArr[r].Length; c++) {
                     for (byte l = 0; l < iBlkArr[r][c].Length; l++) {
                         if (iBlkArr[r][c][l] == null) {
                             continue;
                         }
-                        // keyArr = Arr.Affx<string>(keyArr, uArr[iBlkArr[r][c][l].EU][0]);
-                        // posArr = Arr.Affx<Vector3>(posArr, new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z));
-                        // rotArr = Arr.Affx<Quaternion>(rotArr, Quaternion.identity);
-                        string key = uArr[iBlkArr[r][c][l].EU][0];
-                        Vector3 pos = new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z);
-                        Quaternion rot = Quaternion.identity;
-                        // Debug.Log(uArr[iBlkArr[r][c][l].EU][0]);
                         IBlk curBlk = iBlkArr[r][c][l];
-                        ResMgr.Ins.Inst(key, pos, rot, null, (GameObject res) => {
-                            curBlk.Inp(res);
-                        });
+                        ResMgr.Ins.Inst(
+                            uArr[iBlkArr[r][c][l].EU][0],
+                            new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z),
+                            Quaternion.identity,
+                            null,
+                            (GameObject res) => {
+                                curBlk.Inp(res);
+                            }
+                        );
                     }
                 }
             }

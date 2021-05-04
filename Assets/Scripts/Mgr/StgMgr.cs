@@ -13,6 +13,12 @@
             _iCurStg = null;
         }
 
+        public void InvkUpd() {
+            if (_iCurStg != null) {
+                _iCurStg.InvkUpd();
+            }
+        }
+
         public void Imp(byte eStg) { // excute specific program by Enum
             if (_iCurStg != null) {
                 if (_iStgArr[eStg] == _iCurStg) {
@@ -22,6 +28,12 @@
             }
             _iCurStg = _iStgArr[eStg];
             _iCurStg.Imp();
+        }
+
+        public void Act(byte eStg) {
+            if (_iCurStg != null) {
+                _iCurStg.Act();
+            }
         }
 
         public void Clr(byte eStg) {

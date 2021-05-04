@@ -25,12 +25,16 @@ namespace T {
             _dAltArr[eAlt].Invoke();
         }
 
-        public void Abstr(SCoord3 ctr) {
-            _iBlkArr = _iSS.Abstr(_curArr, ctr);
+        public void Cnstr(SCoord3 ctr) {
+            _iBlkArr = _iSS.Cnstr(_curArr, ctr);
         }
 
-        public void Cnstr() {
-            _iSS.Cnstr(_iBlkArr, _uArr);
+        public void Estb() {
+            _iSS.Estb(_iBlkArr, _uArr);
+        }
+
+        public void Elim() {
+
         }
     }
 }

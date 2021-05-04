@@ -28,10 +28,10 @@ namespace DT {
             _uArr[(byte)EU.TileBlack] = new string[] { "TileBlack" };
 
             _dflArr = new byte[ROWS][][];
-            _dflArr[0] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
-            _dflArr[1] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
-            _dflArr[2] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
-            _dflArr[3] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
+            _dflArr[0] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 2 } };
+            _dflArr[1] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 2 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
+            _dflArr[2] = new byte[COLS][] { new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 2 }, new byte[LAYS] { 1 } };
+            _dflArr[3] = new byte[COLS][] { new byte[LAYS] { 2 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 }, new byte[LAYS] { 1 } };
             _curArr = _dflArr;
         }
 

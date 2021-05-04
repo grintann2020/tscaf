@@ -16,7 +16,7 @@ namespace DT {
         //     return bArr;
         // }
 
-        public override IBlk[][][] Abstr(byte[][][] eObjArr, SCoord3 ctr) {
+        public override IBlk[][][] Cnstr(byte[][][] eObjArr, SCoord3 ctr) {
             // float uWd = 1.0f;
             // float unitWidth = (HEXSCALE * uWd) / 2;
             // float unitHeight = (2 * uWd) / 4;
@@ -91,7 +91,7 @@ namespace DT {
 
         
         // public override void Cnstr(byte[][][] eObjArr, string[] uArr) {
-        public override void Cnstr(IBlk[][][] iBlkArr, string[][] uArr) {
+        public override void Estb(IBlk[][][] iBlkArr, string[][] uArr) {
         }
     }
 }

@@ -32,12 +32,16 @@ namespace T {
             _iSpcArr[eSpc].Alt(eAlt);
         }
 
-        public void Abstr(byte eSpc, SCoord3 ctr) {
-            _iSpcArr[eSpc].Abstr(ctr);
+        public void Cnstr(byte eSpc, SCoord3 ctr) {
+            _iSpcArr[eSpc].Cnstr(ctr);
         }
 
-        public void Cnstr(byte eSpc) {
-            _iSpcArr[eSpc].Cnstr();
+        public void Estb(byte eSpc) {
+            _iSpcArr[eSpc].Estb();
+        }
+
+        public void Blk(byte eSpc, SGrid3 grid) {
+            // _iSpcArr[eSpc].Blk();
         }
 
         // public void Constr(byte eSpc) { // excute specific program by Enum
