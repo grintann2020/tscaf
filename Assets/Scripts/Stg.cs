@@ -2,6 +2,7 @@ namespace T {
 
     public class Stg {
 
+        public bool IsImp { get { return _isImp; } }
         protected delegate void _dBgn();
         protected delegate void _dUpd();
         protected delegate bool _dCond();
@@ -14,8 +15,8 @@ namespace T {
         protected const byte PR = 2;
 
         public Stg() {
-            _ePrcs = 0;
             _isImp = false;
+            _ePrcs = 0;
         }
 
         public virtual void Imp() {
@@ -31,8 +32,8 @@ namespace T {
         }
 
         public virtual void Clr() {
-            _ePrcs = 0;
             _isImp = false;
+            _ePrcs = 0;
         }
 
         public void InvkUpd() {

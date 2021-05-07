@@ -4,11 +4,9 @@ namespace T {
 
     public class VwMgr : Sgltn<VwMgr> {
 
-        // private SCamPrj[] _sPrjArr;
         private IVw[] _iVwArr;
 
         public void Bind(IVwPrm iVwPrm) {
-            // _sPrjArr = iVwPrm.SPrjArr;
             _iVwArr = iVwPrm.IVwArr;
         }
 
@@ -32,12 +30,22 @@ namespace T {
             _iVwArr[eVw].Ornt(eOrnt);
         }
 
+        public void InvkUpd() {
+            for (byte v = 0; v < _iVwArr.Length; v++) {
+                _iVwArr[v].InvkUpd();
+            }
+        }
+        
+        public void Mov(byte eVw, byte eMov) {
+            _iVwArr[eVw].Mov(eMov);
+        }
+
         public IVw Vw(byte eVw) {
             return _iVwArr[eVw];
         }
 
-        // public void Disp(byte eVw, byte eAct) {
-        //     _iVwArr[eVw].Disp(eAct);
-        // }
+        public bool IsStup(byte eVw) {
+            return _iVwArr[eVw].IsStup;
+        }
     }
 }

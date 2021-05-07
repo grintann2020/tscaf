@@ -18,7 +18,6 @@ namespace DT {
             Test, GG, ok
         }
 
-        // public FstVw(SCamPrj dflProj, SOrnt3 dflOrnt) : base(dflProj, dflOrnt) {
         public FstVw() {
             _prjArr = new SCamPrj[Enum.GetNames(typeof(EPrj)).Length];
             _prjArr[(byte)EPrj.P0] = new SCamPrj(true, 10.0f, float.NaN, false, 0.3f, 1000.0f);
@@ -28,10 +27,10 @@ namespace DT {
             _orntArr[(byte)EOrnt.O0] = new SOrnt3(new SCoord3(20.0f, 20.0f, 20.0f), new SCoord3(0.0f, 0.0f, 0.0f));
             _orntArr[(byte)EOrnt.O1] = new SOrnt3(new SCoord3(40.0f, 40.0f, 40.0f), new SCoord3(0.0f, 0.0f, 0.0f));
             _orntArr[(byte)EOrnt.O2] = new SOrnt3(new SCoord3(30.0f, 30.0f, 30.0f), new SCoord3(0.0f, 0.0f, 0.0f));
-
-            _dMovArr = new _dMov[Enum.GetNames(typeof(EMov)).Length];
-            _dMovArr[(byte)EMov.Test] = Test;
-            _dMovArr[(byte)EMov.GG] = GG;
+            
+            _stpArr = new ushort[Enum.GetNames(typeof(EMov)).Length];
+            
+            _trkArr = new SCoord3[Enum.GetNames(typeof(EMov)).Length][][];
 
             _dflPrj = _prjArr[(byte)EPrj.P0];
             _dflOrnt = _orntArr[(byte)EOrnt.O0];
@@ -43,14 +42,6 @@ namespace DT {
 
         public override void Stdn() {
             base.Stdn();
-        }
-
-        public void Test() {
-            Debug.Log("FstVw -- Test()");
-        }
-
-        public void GG() {
-            Debug.Log("FstVw -- GG()");
         }
     }
 }

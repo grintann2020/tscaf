@@ -65,21 +65,21 @@ namespace DT {
         }
 
         private void BgnA() {
-            Debug.Log("ATut0Stg -- BgnA -- aaa = " + aaa);
+            // Debug.Log("ATut0Stg -- BgnA -- aaa = " + aaa);
         }
 
         private void BgnB() {
-            Debug.Log("ATut0Stg -- BgnB -- bbb = " + bbb);
+            // Debug.Log("ATut0Stg -- BgnB -- bbb = " + bbb);
         }
 
         private void BgnC() {
-            Debug.Log("ATut0Stg -- BgnC -- ccc = " + ccc);
+            // Debug.Log("ATut0Stg -- BgnC -- ccc = " + ccc);
         }
 
         private void End() {
             StgMgr.Ins.Imp((byte)EStg.Ex1);
             // StgMgr.Ins.Act((byte)EStg.ATut1);
-            Debug.Log("ATut0Stg -- End");
+            // Debug.Log("ATut0Stg -- End");
         }
 
         private void UpdA() {

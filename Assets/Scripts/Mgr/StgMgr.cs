@@ -36,5 +36,17 @@
                 _iCurStg.InvkUpd();
             }
         }
+
+        public IStg Stg() {
+            return _iCurStg;
+        }
+        
+        public IStg Stg(byte eStg) {
+            return _iStgArr[eStg];
+        }
+
+        public bool IsImp(byte eStg) {
+            return _iStgArr[eStg].IsImp;
+        }
     }
 }
