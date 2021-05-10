@@ -2,10 +2,8 @@ using T;
 
 namespace DT {
 
-    public class A0Ia : IIa {
+    public class A0Ia : Ia, IIa {
 
-        public void InvkUpd() {
-            
-        }
+
     }
 }

@@ -16,10 +16,6 @@ namespace T {
             _iSpcArr[eSpc].Dfl();
         }
 
-        public ISpc Spc(byte eSpc) {
-            return _iSpcArr[eSpc];
-        }
-
         public byte[][][] DflArr(byte eSpc) {
             return _iSpcArr[eSpc].DflArr;
         }
@@ -36,8 +32,20 @@ namespace T {
             _iSpcArr[eSpc].Cnstr(ctr);
         }
 
+        public void Dcstr(byte eSpc) {
+            _iSpcArr[eSpc].Dcstr();
+        }
+
         public void Estb(byte eSpc) {
             _iSpcArr[eSpc].Estb();
+        }
+
+        public void Elim(byte eSpc) {
+            _iSpcArr[eSpc].Elim();
+        }
+
+        public ISpc Spc(byte eSpc) {
+            return _iSpcArr[eSpc];
         }
 
         public void Blk(byte eSpc, SGrid3 grid) {

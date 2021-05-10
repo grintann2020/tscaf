@@ -57,6 +57,7 @@ namespace DT {
         public override void Imp() {
             SpcMgr.Ins.Cnstr((byte)ESpc.A0, new SCoord3(0.0f, 0.0f, 0.0f));
             SpcMgr.Ins.Estb((byte)ESpc.A0);
+            // SpcMgr.Ins.Dcstr((byte)ESpc.A0);
             base.Imp();
         }
 
@@ -65,6 +66,7 @@ namespace DT {
         }
 
         private void BgnA() {
+            
             // Debug.Log("ATut0Stg -- BgnA -- aaa = " + aaa);
         }
 

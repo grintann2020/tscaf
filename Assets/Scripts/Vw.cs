@@ -17,8 +17,8 @@ namespace T {
         protected SCamPrj _dflPrj;
         protected SOrnt3 _dflOrnt;
         protected byte _eMov;
-        protected bool _isStup;
-        private bool _isMov;
+        protected bool _isStup = false;
+        private bool _isMov = false;
 
         public Vw() {
             _cam = null;

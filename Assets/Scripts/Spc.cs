@@ -1,7 +1,12 @@
+using System;
+using UnityEngine;
+
 namespace T {
 
     public class Spc {
 
+        public bool IsCnstr { get { return _isCnstr; } }
+        public bool IsEstb { get { return _isEstb; } }
         public byte[][][] DflArr { get { return _dflArr; } }
         public byte[][][] CurArr { get { return _curArr; } }
         protected delegate void _dAlt();
@@ -11,10 +16,32 @@ namespace T {
         protected byte[][][] _curArr;
         protected IBlk[][][] _iBlkArr;
         protected ISS _iSS;
-
+        protected bool _isCnstr = false;
+        protected bool _isEstb = false;
 
         public Spc(ISS iSS) {
             _iSS = iSS;
+        }
+
+        public void Cnstr(SCoord3 ctr) {
+            _isCnstr = true;
+            Debug.Log("_iBlkArr --- " + _iBlkArr);
+            _iBlkArr = _iSS.Cnstr(_curArr, ctr);
+        }
+
+        public void Dcstr() {
+            _isCnstr = false;
+            Array.Clear(_iBlkArr, 0, _iBlkArr.Length);
+        }
+
+        public void Estb() {
+            _isEstb = true;
+            _iSS.Estb(_iBlkArr, _uArr);
+        }
+
+        public void Elim() {
+            _isEstb = false;
+            Debug.Log("Elim() -- ");
         }
 
         public void Dfl() {
@@ -23,18 +50,6 @@ namespace T {
 
         public void Alt(byte eAlt) {
             _dAltArr[eAlt].Invoke();
-        }
-
-        public void Cnstr(SCoord3 ctr) {
-            _iBlkArr = _iSS.Cnstr(_curArr, ctr);
-        }
-
-        public void Estb() {
-            _iSS.Estb(_iBlkArr, _uArr);
-        }
-
-        public void Elim() {
-
         }
     }
 }

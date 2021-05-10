@@ -87,14 +87,14 @@ namespace DT {
                         if (iBlkArr[r][c][l] == null) {
                             continue;
                         }
-                        IBlk curBlk = iBlkArr[r][c][l];
+                        IBlk tmpBlk = iBlkArr[r][c][l];
                         ResMgr.Ins.Inst(
                             uArr[iBlkArr[r][c][l].EU][0],
                             new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z),
                             Quaternion.identity,
                             null,
                             (GameObject res) => {
-                                curBlk.Inp(res);
+                                tmpBlk.Inp(res);
                             }
                         );
                     }

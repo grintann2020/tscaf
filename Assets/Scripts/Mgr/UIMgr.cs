@@ -39,6 +39,10 @@ namespace T {
             _iUIArr[eUI].Unstl();
         }
 
+        public bool IsInstl(byte eUI) {
+            return _iUIArr[eUI].IsInstl;
+        }
+
         public void Enbl(byte eUI) {
             _iUIArr[eUI].Enbl();
         }
