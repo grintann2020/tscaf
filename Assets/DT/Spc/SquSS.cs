@@ -4,13 +4,13 @@ using T;
 
 namespace DT {
 
-    public enum ESqu3Dir : byte { // don't move the enum to namespace T
+    public enum ESquDir : byte { // don't move the enum to namespace T
         N, E, W, S, NW, NE, SW, SE,
     }
 
-    public class Squ3SS : SS, ISS {
+    public class SquSS : SS, ISS {
 
-        public Squ3SS(byte uWd, byte uHt) : base(uWd, uHt) {
+        public SquSS(byte uWd, byte uHt) : base(uWd, uHt) {
 
         }
 
@@ -51,27 +51,27 @@ namespace DT {
                         }
 
                         // if (row > 0 && col < cols - 1) {
-                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.NE);
+                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.NE);
                         //     iBlkArr[row, col].NE = iBlkArr[row + dir[0], col + dir[1]];
                         // }
 
                         // if (row > 0 && col > 0) {
-                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.NW);
+                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.NW);
                         //     iBlkArr[row, col].NW = iBlkArr[row + dir[0], col + dir[1]];
                         // }
 
                         // if (col > 0) {
-                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.W);
+                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.W);
                         //     iBlkArr[row, col].W = iBlkArr[row + dir[0], col + dir[1]];
                         // }
 
                         // if (row < rows - 1 && col > 0) {
-                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.SW);
+                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.SW);
                         //     iBlkArr[row, col].SW = iBlkArr[row + dir[0], col + dir[1]];
                         // }
 
                         // if (row < rows - 1 && col < cols - 1) {
-                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.SE);
+                        //     int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.SE);
                         //     iBlkArr[row, col].SE = iBlkArr[row + dir[0], col + dir[1]];
                         // }
                     }
@@ -146,32 +146,32 @@ namespace DT {
 //                     }
 
 //                     if (col < cols - 1) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.E);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.E);
 //                         HexArr[row, col].E = HexArr[row + dir[0], col + dir[1]];
 //                     }
 
 //                     if (row > 0 && col < cols - 1) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.NE);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.NE);
 //                         HexArr[row, col].NE = HexArr[row + dir[0], col + dir[1]];
 //                     }
 
 //                     if (row > 0 && col > 0) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.NW);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.NW);
 //                         HexArr[row, col].NW = HexArr[row + dir[0], col + dir[1]];
 //                     }
 
 //                     if (col > 0) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.W);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.W);
 //                         HexArr[row, col].W = HexArr[row + dir[0], col + dir[1]];
 //                     }
 
 //                     if (row < rows - 1 && col > 0) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.SW);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.SW);
 //                         HexArr[row, col].SW = HexArr[row + dir[0], col + dir[1]];
 //                     }
 
 //                     if (row < rows - 1 && col < cols - 1) {
-//                         int[] dir = _hexCalc.Adjacency(row, (int)ESqu3Dir.SE);
+//                         int[] dir = _hexCalc.Adjacency(row, (int)ESquDir.SE);
 //                         HexArr[row, col].SE = HexArr[row + dir[0], col + dir[1]];
 //                     }
 //                 }

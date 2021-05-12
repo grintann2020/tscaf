@@ -30,6 +30,7 @@ namespace DT {
         public void InvkUpd() {
             StgMgr.Ins.InvkUpd();
             VwMgr.Ins.InvkUpd();
+            // IaMgr
         }
 
         public void Exe() {
