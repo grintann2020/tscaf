@@ -16,9 +16,12 @@ namespace DT {
 
         IEnumerator TestW(int sec, GameObject[] goArr = null) {
             yield return new WaitForSeconds(sec);
+            SpcMgr.Ins.Elim((byte)ESpc.A0);
+            // IaMgr.Ins.Sw((byte)EIa.A1);
             // StgMgr.Ins.Act((byte)EStg.ATut0);
             // VwMgr.Ins.Mov((byte)EVw.Play, (byte)PlayVw.EMov.M1);
             yield return new WaitForSeconds(sec * 2);
+            // IaMgr.Ins.Sw((byte)EIa.A0);
             // VwMgr.Ins.Mov((byte)EVw.Play, (byte)PlayVw.EMov.M1);
         }
     }
@@ -30,7 +33,7 @@ namespace DT {
         public void InvkUpd() {
             StgMgr.Ins.InvkUpd();
             VwMgr.Ins.InvkUpd();
-            // IaMgr
+            IaMgr.Ins.InvkUpd();
         }
 
         public void Exe() {
@@ -38,9 +41,8 @@ namespace DT {
             StgMgr.Ins.Imp((byte)EStg.Ex0);
             
             VwMgr.Ins.Stup((byte)EVw.Play, Camera.main);
-            Test2.Ins.TestWait(2);
-
-            SpcMgr.Ins.Elim((byte)EStg.Ex0);
+            IaMgr.Ins.Sw((byte)EIa.A0);
+            Test2.Ins.TestWait(4);
         }
 
         public void End() {

@@ -11,8 +11,8 @@ namespace T {
         protected _dCond[] _dCondArr;
         protected byte[][][] _prcsArr;
         protected byte _ePrcs;
-        protected bool _isImp;
         protected const byte PR = 2;
+        private bool _isImp;
 
         public Stg() {
             _isImp = false;

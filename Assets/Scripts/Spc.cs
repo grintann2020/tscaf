@@ -25,7 +25,6 @@ namespace T {
 
         public void Cnstr(SCoord3 ctr) {
             _isCnstr = true;
-            Debug.Log("_iBlkArr --- " + _iBlkArr);
             _iBlkArr = _iSS.Cnstr(_curArr, ctr);
         }
 

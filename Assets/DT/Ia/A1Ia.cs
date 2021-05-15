@@ -6,6 +6,13 @@ namespace DT {
 
         public A1Ia(III[] iIIArr) : base(iIIArr) {
 
+        }
+
+        public void R2() {
+
+        }
+
+        public void R3() {
 
         }
     }

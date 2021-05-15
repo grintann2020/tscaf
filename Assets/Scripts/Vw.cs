@@ -4,8 +4,6 @@ namespace T {
 
     public class Vw {
 
-        // protected delegate void _dStp();
-        // protected _dStp[] _dStpArr;
         public bool IsStup { get { return _isStup; } }
         public bool IsMov { get { return _isMov; } }
         protected Camera _cam;
