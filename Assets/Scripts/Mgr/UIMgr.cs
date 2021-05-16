@@ -15,7 +15,6 @@ namespace T {
         }
 
         public void InvkUpd() { 
-            // Debug.Log("UIMgr -- InvkUpd");
             for (byte u = 0; u < _iUIArr.Length; u++) {
                 if (_iUIArr[u].IsInstl) {
                     _iUIArr[u].InvkUpd();
@@ -31,16 +30,16 @@ namespace T {
             return _iUIArr[eUI];
         }
 
+        public bool IsInstl(byte eUI) {
+            return _iUIArr[eUI].IsInstl;
+        }
+
         public void Instl(byte eUI) {
             _iUIArr[eUI].Instl();
         }
 
         public void Unstl(byte eUI) {
             _iUIArr[eUI].Unstl();
-        }
-
-        public bool IsInstl(byte eUI) {
-            return _iUIArr[eUI].IsInstl;
         }
 
         public void Enbl(byte eUI) {

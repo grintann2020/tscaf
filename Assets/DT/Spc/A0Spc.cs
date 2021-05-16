@@ -24,7 +24,7 @@ namespace DT {
             _dAltArr[(byte)EAlt.Spc02] = Spc02;
 
             _uArr = new string[Enum.GetNames(typeof(EU)).Length][];
-            _uArr[(byte)EU.TileRed] = new string[] { "TileRed" };
+            _uArr[(byte)EU.TileRed] = new string[] { "TileRed", "TileBlue" };
             _uArr[(byte)EU.TileGreen] = new string[] { "TileGreen" };
             _uArr[(byte)EU.TileBlue] = new string[] { "TileBlue" };
 

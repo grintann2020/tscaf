@@ -61,10 +61,6 @@ namespace DT {
             base.Imp();
         }
 
-        public override void Clr() {
-            base.Clr();
-        }
-
         private void BgnA() {
             
             // Debug.Log("ATut0Stg -- BgnA -- aaa = " + aaa);

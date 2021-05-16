@@ -14,11 +14,12 @@ namespace DT {
             _dDtcArr = new _dDtc[Enum.GetNames(typeof(EEvt)).Length];
             _dDtcArr[(byte)EEvt.E0] = I0;
             _dDtcArr[(byte)EEvt.E1] = I1;
-        }
 
-        // public override void Enbl() {
-        //     base.Enbl();
-        // }
+            _rctArr = new Action[Enum.GetNames(typeof(EEvt)).Length];
+            for (byte e = 0; e < _rctArr.Length; e++) {
+                _rctArr[e] = () => {};
+            }
+        }
 
         private void I0(Action rct) {
             if (Input.GetMouseButtonDown(0)) {

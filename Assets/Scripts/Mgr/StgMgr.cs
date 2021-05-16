@@ -18,15 +18,15 @@
                 if (_iStgArr[eStg] == _iCurStg) {
                     return;
                 }
-                _iCurStg.Clr();
+                _iCurStg.Abt();
             }
             _iCurStg = _iStgArr[eStg];
             _iCurStg.Imp();
         }
 
-        public void Clr(byte eStg) {
+        public void Abt(byte eStg) {
             if (_iCurStg != null) {
-                _iCurStg.Clr();
+                _iCurStg.Abt();
                 _iCurStg = null;
             }
         }

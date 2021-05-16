@@ -2,28 +2,24 @@ namespace T {
 
     public class Ia {
 
-        public bool IsEnbl { get { return _isEnbl; } }
+        public bool IsInstl { get { return _isInstl; } }
         protected III[] _iIIArr;
-        private bool _isEnbl;
+        private bool _isInstl;
 
         public Ia(III[] iIIArr) {
             _iIIArr = iIIArr;
         }
 
-        public virtual void Enbl() {
-            for (byte i = 0; i < _iIIArr.Length; i++) {
-                _iIIArr[i].Enbl();
-            }
+        public virtual void Instl() {
+            _isInstl = true;
         }
 
-        public virtual void Dsbl() {
-            for (byte i = 0; i < _iIIArr.Length; i++) {
-                _iIIArr[i].Dsbl();
-            }
+        public virtual void Unstl() {
+            _isInstl = false;
         }
 
         public void InvkUpd() {
-            if (_isEnbl == false) {
+            if (_isInstl == false) {
                 return;
             }
             for (byte i = 0; i < _iIIArr.Length; i++) {

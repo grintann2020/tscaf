@@ -4,7 +4,7 @@ namespace T {
 
         bool IsImp { get; }
         void Imp();
-        void Clr();
+        void Abt();
         void InvkUpd();
     }
 }

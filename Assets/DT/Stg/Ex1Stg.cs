@@ -39,10 +39,6 @@ namespace DT {
         public override void Imp() {
             base.Imp();
         }
-        
-        public override void Clr() {
-            base.Clr();
-        }
 
         private void Bgn1() {
             _isEnd = true;

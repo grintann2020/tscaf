@@ -2,9 +2,9 @@ namespace T {
 
     public interface IIa {
 
-        bool IsEnbl { get; }
-        void Enbl();
-        void Dsbl();
+        bool IsInstl { get; }
+        void Instl();
+        void Unstl();
         void InvkUpd();
     }
 }

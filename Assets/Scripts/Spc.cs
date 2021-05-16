@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace T {
 
@@ -40,7 +39,7 @@ namespace T {
 
         public void Elim() {
             _isEstb = false;
-            Debug.Log("Elim() -- ");
+            // Debug.Log("Elim() -- ");
         }
 
         public void Dfl() {

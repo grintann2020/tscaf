@@ -10,14 +10,9 @@ namespace T {
         protected _dUpd[] _dUpdArr;
         protected _dCond[] _dCondArr;
         protected byte[][][] _prcsArr;
-        protected byte _ePrcs;
+        protected byte _ePrcs = 0;
         protected const byte PR = 2;
-        private bool _isImp;
-
-        public Stg() {
-            _isImp = false;
-            _ePrcs = 0;
-        }
+        private bool _isImp = false;
 
         public virtual void Imp() {
             _isImp = true;
@@ -31,7 +26,7 @@ namespace T {
             _dBgnArr[_ePrcs].Invoke();
         }
 
-        public virtual void Clr() {
+        public virtual void Abt() {
             _isImp = false;
             _ePrcs = 0;
         }

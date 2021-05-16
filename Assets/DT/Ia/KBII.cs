@@ -15,15 +15,11 @@ namespace DT {
             _dDtcArr[(byte)EEvt.A1] = A1;
             _dDtcArr[(byte)EEvt.A2] = A2;
 
-            // _rctArr = new Action[Enum.GetNames(typeof(EEvt)).Length];
-            // for (byte e = 0; e < _rctArr.Length; e++) {
-            //     _rctArr[e] = () => {};
-            // }
+            _rctArr = new Action[Enum.GetNames(typeof(EEvt)).Length];
+            for (byte e = 0; e < _rctArr.Length; e++) {
+                _rctArr[e] = () => {};
+            }
         }
-
-        // public override void Enbl() {
-        //     base.Enbl();
-        // }
 
         private void A0(Action dRct) {
         }

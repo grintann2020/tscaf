@@ -88,22 +88,34 @@ namespace DT {
                             continue;
                         }
                         IBlk tmpBlk = iBlkArr[r][c][l];
-                        ResMgr.Ins.Inst(
-                            uArr[iBlkArr[r][c][l].EU][0],
-                            new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z),
-                            Quaternion.identity,
-                            null,
-                            (GameObject res) => {
-                                tmpBlk.Inp(res);
-                            }
-                        );
+                        for (byte u = 0; u < uArr[tmpBlk.EU].Length; u++) {
+                            ResMgr.Ins.Inst(
+                                uArr[tmpBlk.EU][u],
+                                new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z),
+                                Quaternion.identity,
+                                null,
+                                (GameObject res) => {
+                                    tmpBlk.Inp(res);
+                                }
+                            );
+                        }
                     }
                 }
             }
         }
 
         public override void Elim(IBlk[][][] iBlkArr) {
-
+            for (byte r = 0; r < iBlkArr.Length; r++) {
+                for (byte c = 0; c < iBlkArr[r].Length; c++) {
+                    for (byte l = 0; l < iBlkArr[r][c].Length; l++) {
+                        if (iBlkArr[r][c][l] == null) {
+                            continue;
+                        }
+                        IBlk tmpBlk = iBlkArr[r][c][l];
+                        // ResMgr.Ins.Rls<GameObject>(tmpBlk.);
+                    }
+                }
+            }
         }
     }
 }

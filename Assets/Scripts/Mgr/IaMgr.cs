@@ -19,13 +19,30 @@ namespace T {
             }
         }
 
-        public void Sw(byte eIa) {
+        public IIa Ia(byte eIa) {
+            return _iIaArr[eIa];
+        }
+
+        public bool IsInstl(byte eIa) {
+            return _iIaArr[eIa].IsInstl;
+        }
+
+        public void Instl(byte eIa) {
             if (_iCurIa != null) {
                 if (_iIaArr[eIa] == _iCurIa) {
                     return;
                 }
+                _iCurIa.Unstl();
             }
             _iCurIa = _iIaArr[eIa];
+            _iCurIa.Instl();
+        }
+
+        public void Unstl(byte eIa) {
+            if (_iCurIa != null) {
+                _iCurIa.Unstl();
+                _iCurIa = null;
+            }
         }
     }
 }
