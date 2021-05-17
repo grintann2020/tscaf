@@ -39,6 +39,7 @@ namespace T {
 
         public void Elim() {
             _isEstb = false;
+            _iSS.Elim(_iBlkArr);
             // Debug.Log("Elim() -- ");
         }
 

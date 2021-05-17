@@ -6,6 +6,7 @@ namespace T {
 
         SGrid3 Grid { get; }
         SCoord3 Coord { get; }
+        GameObject[] GoArr { get; }
         ushort Row { get; }
         ushort Col { get; }
         ushort Lay { get; }
@@ -13,6 +14,9 @@ namespace T {
         float Z { get; }
         float Y { get; }
         byte EU { get; set; }
-        void Inp(GameObject go);
+        void MI(GameObject go); // move in
+        void MO(GameObject go); // move out
+        void MO(byte idx);
+        void MO();
     }
 }

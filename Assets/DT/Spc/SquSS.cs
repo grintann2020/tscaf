@@ -91,11 +91,11 @@ namespace DT {
                         for (byte u = 0; u < uArr[tmpBlk.EU].Length; u++) {
                             ResMgr.Ins.Inst(
                                 uArr[tmpBlk.EU][u],
-                                new Vector3(iBlkArr[r][c][l].X, iBlkArr[r][c][l].Y, iBlkArr[r][c][l].Z),
+                                new Vector3(tmpBlk.X, tmpBlk.Y, tmpBlk.Z),
                                 Quaternion.identity,
                                 null,
                                 (GameObject res) => {
-                                    tmpBlk.Inp(res);
+                                    tmpBlk.MI(res);
                                 }
                             );
                         }
@@ -112,7 +112,12 @@ namespace DT {
                             continue;
                         }
                         IBlk tmpBlk = iBlkArr[r][c][l];
-                        // ResMgr.Ins.Rls<GameObject>(tmpBlk.);
+                        ResMgr.Ins.Rls<GameObject>(
+                            tmpBlk.GoArr,
+                            () => {
+                                tmpBlk.MO();
+                            }
+                        );
                     }
                 }
             }

@@ -6,19 +6,14 @@ namespace DT {
 
     public class MusII : II, III {
 
-        public enum EEvt : byte {
-            E0, E1
+        public enum EInp : byte {
+            I0, I1
         }
 
-        public MusII() {
-            _dDtcArr = new _dDtc[Enum.GetNames(typeof(EEvt)).Length];
-            _dDtcArr[(byte)EEvt.E0] = I0;
-            _dDtcArr[(byte)EEvt.E1] = I1;
-
-            _rctArr = new Action[Enum.GetNames(typeof(EEvt)).Length];
-            for (byte e = 0; e < _rctArr.Length; e++) {
-                _rctArr[e] = () => {};
-            }
+        public MusII(byte eII) : base(eII) {
+            _dDtcArr = new _dDtc[Enum.GetNames(typeof(EInp)).Length];
+            _dDtcArr[(byte)EInp.I0] = I0;
+            _dDtcArr[(byte)EInp.I1] = I1;
         }
 
         private void I0(Action rct) {

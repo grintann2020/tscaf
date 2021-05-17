@@ -7,6 +7,7 @@ namespace T {
         
         public SGrid3 Grid { get { return _grid; } }
         public SCoord3 Coord { get { return _coord; } }
+        public GameObject[] GoArr { get { return _goArr; } }
         public ushort Row { get { return _grid.Row; } }
         public ushort Col { get { return _grid.Col; } }
         public ushort Lay { get { return _grid.Lay; } }
@@ -24,16 +25,20 @@ namespace T {
             _goArr = new GameObject[0];
         }
 
-        public void Inp(GameObject go) {
+        public void MI(GameObject go) {
             _goArr = Arr.Add<GameObject>(_goArr, go);
         }
 
-        public void Otp(GameObject go) {
+        public void MO(GameObject go) {
             _goArr = Arr.Rmv<GameObject>(_goArr, (ushort)Array.IndexOf<GameObject>(_goArr, go));
         }
 
-         public void Otp(ushort idx) {
-            _goArr = Arr.Rmv<GameObject>(_goArr, idx);
+        public void MO(byte idx) {
+            _goArr = Arr.Rmv<GameObject>(_goArr, (ushort)idx);
+        }
+
+        public void MO() {
+            _goArr = new GameObject[0];
         }
     }
 }

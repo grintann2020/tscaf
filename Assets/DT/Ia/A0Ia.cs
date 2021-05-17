@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using T;
 
@@ -5,16 +6,27 @@ namespace DT {
 
     public class A0Ia : Ia, IIa {
 
+        public enum EAct {
+            R0, R1
+        }
+
+        public enum EEvt {
+            E0, E1, E2
+        }
+
         private byte _r0, _r1 = 0;
 
-        public A0Ia(III[] iIIArr) : base(iIIArr) {
-            _iIIArr[0].Invk((byte)MusII.EEvt.E0, R0);
-            _iIIArr[0].Invk((byte)MusII.EEvt.E0, R0);
-            _iIIArr[0].Invk((byte)MusII.EEvt.E0, R0);
-            _iIIArr[0].Invk((byte)MusII.EEvt.E1, R1);
-            _iIIArr[0].Invk((byte)MusII.EEvt.E1, R0);
-            _iIIArr[0].Waiv((byte)MusII.EEvt.E0, R0);
-            _iIIArr[0].Waiv((byte)MusII.EEvt.E0, R0);
+        public A0Ia(III[] iIIPrmArr) : base(iIIPrmArr) {
+            _iIIArr = new III[2] { _iIIPrmArr[(byte)EII.Mus], _iIIPrmArr[(byte)EII.KB] };
+
+            _actArr = new Action[Enum.GetNames(typeof(EAct)).Length];
+            _actArr[(byte)EAct.R0] = R0;
+            _actArr[(byte)EAct.R1] = R1;
+
+            _evtArr = new byte[Enum.GetNames(typeof(EEvt)).Length][];
+            _evtArr[(byte)EEvt.E0] = new byte[PR] { 0, (byte)MusII.EInp.I0, (byte)EAct.R0 };
+            _evtArr[(byte)EEvt.E1] = new byte[PR] { 0, (byte)MusII.EInp.I1, (byte)EAct.R0 };
+            _evtArr[(byte)EEvt.E2] = new byte[PR] { 0, (byte)MusII.EInp.I1, (byte)EAct.R1 };
         }
 
         public void R0() {
