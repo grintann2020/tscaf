@@ -47,20 +47,44 @@ namespace T {
             return _iHubArr[eHub];
         }
 
-        public void St(byte eGO, GameObject go) {
-            _iCurHub.St(eGO, go);
+        public void Act(byte eAct) {
+            _iCurHub.Act(eAct);
         }
 
-        public void St(byte eHub, byte eGO, GameObject go) {
-            _iHubArr[eHub].St(eGO, go);
+        public void Act(byte eHub, byte eAct) {
+            _iHubArr[eHub].Act(eAct);
         }
 
-        public GameObject Gt(byte eGO) {
-            return _iCurHub.Gt(eGO);
+        public void StGO(byte eGO, GameObject go) {
+            _iCurHub.StGO(eGO, go);
         }
 
-        public GameObject Gt(byte eHub, byte eGO) {
-            return _iHubArr[eHub].Gt(eGO);
+        public void StGO(byte eHub, byte eGO, GameObject go) {
+            _iHubArr[eHub].StGO(eGO, go);
+        }
+
+        public GameObject GtGO(byte eGO) {
+            return _iCurHub.GtGO(eGO);
+        }
+
+        public GameObject GtGO(byte eHub, byte eGO) {
+            return _iHubArr[eHub].GtGO(eGO);
+        }
+
+        public void StVal<T>(byte eVal, T val) {
+            _iCurHub.StVal<T>(eVal, val);
+        }
+
+        public void StVal<T>(byte eHub, byte eVal, T val) {
+            _iHubArr[eHub].StVal<T>(eVal, val);
+        }
+
+        public T GtVal<T>(byte eVal) {
+            return _iCurHub.GtVal<T>(eVal);
+        }
+
+        public T GtVal<T>(byte eHub, byte eVal) {
+            return _iHubArr[eHub].GtVal<T>(eVal);
         }
     }
 }

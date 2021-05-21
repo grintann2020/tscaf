@@ -6,7 +6,7 @@ namespace DT {
 
     public class Ex0Stg : Stg, IStg {
 
-        public enum EAct : byte {
+        public enum EPrcs : byte {
             A, B, C, D
         }
 
@@ -17,17 +17,17 @@ namespace DT {
         private int aaa, bbb, ccc = 0;
 
         public Ex0Stg() {
-            _dBgnArr = new _dBgn[Enum.GetNames(typeof(EAct)).Length];
-            _dBgnArr[(byte)EAct.A] = BgnA;
-            _dBgnArr[(byte)EAct.B] = BgnB;
-            _dBgnArr[(byte)EAct.C] = BgnC;
-            _dBgnArr[(byte)EAct.D] = End;
+            _dBgnArr = new _dBgn[Enum.GetNames(typeof(EPrcs)).Length];
+            _dBgnArr[(byte)EPrcs.A] = BgnA;
+            _dBgnArr[(byte)EPrcs.B] = BgnB;
+            _dBgnArr[(byte)EPrcs.C] = BgnC;
+            _dBgnArr[(byte)EPrcs.D] = End;
 
-            _dUpdArr = new _dUpd[Enum.GetNames(typeof(EAct)).Length];
-            _dUpdArr[(byte)EAct.A] = UpdA;
-            _dUpdArr[(byte)EAct.B] = UpdB;
-            _dUpdArr[(byte)EAct.C] = UpdC;
-            _dUpdArr[(byte)EAct.D] = null;
+            _dUpdArr = new _dUpd[Enum.GetNames(typeof(EPrcs)).Length];
+            _dUpdArr[(byte)EPrcs.A] = UpdA;
+            _dUpdArr[(byte)EPrcs.B] = UpdB;
+            _dUpdArr[(byte)EPrcs.C] = UpdC;
+            _dUpdArr[(byte)EPrcs.D] = null;
 
             _dCondArr = new _dCond[Enum.GetNames(typeof(ECond)).Length];
             _dCondArr[(byte)ECond.A0] = CondA0;
@@ -37,21 +37,21 @@ namespace DT {
             _dCondArr[(byte)ECond.B2] = CondB2;
             _dCondArr[(byte)ECond.C0] = CondC0;
 
-            _prcsArr = new byte[Enum.GetNames(typeof(EAct)).Length][][];
-            _prcsArr[(byte)EAct.A] = new byte[2][] {
-                new byte [PR] {(byte)ECond.A0, (byte)EAct.B},
-                new byte [PR] {(byte)ECond.A1, (byte)EAct.B},
+            _prcsArr = new byte[Enum.GetNames(typeof(EPrcs)).Length][][];
+            _prcsArr[(byte)EPrcs.A] = new byte[2][] {
+                new byte [PR] {(byte)ECond.A0, (byte)EPrcs.B},
+                new byte [PR] {(byte)ECond.A1, (byte)EPrcs.B},
             };
-            _prcsArr[(byte)EAct.B] = new byte[3][] {
-                new byte [PR] {(byte)ECond.B0, (byte)EAct.C},
-                new byte [PR] {(byte)ECond.B1, (byte)EAct.C},
-                new byte [PR] {(byte)ECond.B2, (byte)EAct.D},
+            _prcsArr[(byte)EPrcs.B] = new byte[3][] {
+                new byte [PR] {(byte)ECond.B0, (byte)EPrcs.C},
+                new byte [PR] {(byte)ECond.B1, (byte)EPrcs.C},
+                new byte [PR] {(byte)ECond.B2, (byte)EPrcs.D},
             };
-            _prcsArr[(byte)EAct.C] = new byte[1][] {
-                new byte [PR] {(byte)ECond.C0, (byte)EAct.A},
+            _prcsArr[(byte)EPrcs.C] = new byte[1][] {
+                new byte [PR] {(byte)ECond.C0, (byte)EPrcs.A},
             };
 
-            _prcsArr[(byte)EAct.D] = new byte[0][];
+            _prcsArr[(byte)EPrcs.D] = new byte[0][];
         }
 
         public override void Imp() {

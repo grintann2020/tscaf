@@ -8,7 +8,10 @@ namespace T {
         void Conn();
         void Dscn();
         void InvkUpd();
-        void St(byte eGO, GameObject go);
-        GameObject Gt(byte eGO);
+        void Act(byte eAct);
+        void StGO(byte eGO, GameObject go);
+        GameObject GtGO(byte eGO);
+        void StVal<T>(byte eVal, T val);
+        T GtVal<T>(byte eVal);
     }
 }
